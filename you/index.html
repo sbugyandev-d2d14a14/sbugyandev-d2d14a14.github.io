@@ -1,0 +1,1707 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>you jizz.com - 成人视频内容聚合与分类导航</title>
+  <meta name="description" content="you jizz.com 汇聚成人视频分类导航、最新条目更新、用户评分与评论，涵盖欧美、日本、素人、专业工作室等类型，适合成年观众快速查找与比较内容。">
+  <meta name="keywords" content="you jizz.com">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a1a2e'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23e94560' stroke-width='2.5'/%3E%3Cpath d='M13 11l8 5-8 5z' fill='%23e94560'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --primary: #e94560;
+      --primary-light: #ff6b81;
+      --primary-dark: #c2314a;
+      --primary-bg: #fff0f3;
+      --bg: #f7f7fa;
+      --surface: #ffffff;
+      --text-1: #1a1a2e;
+      --text-2: #4a4a5e;
+      --text-3: #8b8b9e;
+      --divider: #e8e8ed;
+      --radius-card: 12px;
+      --radius-btn: 8px;
+      --radius-tag: 4px;
+      --radius-banner: 16px;
+      --shadow-default: 0 1px 3px rgba(26,26,46,0.06);
+      --shadow-hover: 0 6px 20px rgba(26,26,46,0.10);
+      --header-height: 56px;
+      --announce-height: 36px;
+      --sticky-offset: calc(var(--header-height) + var(--announce-height) + 8px);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--announce-height) + var(--header-height) + 12px); }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; }
+    button { cursor: pointer; font-family: inherit; }
+    ul { list-style: none; }
+
+    /* ===== 吸顶公告条 ===== */
+    .announce-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--announce-height);
+      background: var(--primary-dark);
+      color: #fff;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .announce-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      white-space: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+      width: 100%;
+    }
+    .announce-inner::-webkit-scrollbar { display: none; }
+    .announce-item { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+    .announce-item .tag {
+      background: rgba(255,255,255,0.2);
+      padding: 1px 7px;
+      border-radius: 3px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .announce-brand {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+      margin-right: 4px;
+    }
+
+    /* ===== 吸顶页头 ===== */
+    .site-header {
+      position: sticky;
+      top: var(--announce-height);
+      z-index: 99;
+      height: var(--header-height);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--divider);
+    }
+    .header-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .logo-mark { width: 30px; height: 30px; flex-shrink: 0; }
+    .logo-text {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-1);
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+    }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      flex: 1;
+      min-width: 0;
+    }
+    .header-nav::-webkit-scrollbar { display: none; }
+    .header-nav a {
+      padding: 6px 12px;
+      font-size: 14px;
+      color: var(--text-2);
+      border-radius: var(--radius-btn);
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+    .header-nav a:hover { background: var(--primary-bg); color: var(--primary); }
+    .header-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .search-box-header {
+      display: flex;
+      align-items: center;
+      background: var(--bg);
+      border: 1px solid var(--divider);
+      border-radius: var(--radius-btn);
+      padding: 0 10px;
+      height: 34px;
+      transition: border-color 0.2s;
+    }
+    .search-box-header:focus-within { border-color: var(--primary); }
+    .search-box-header input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 13px;
+      width: 140px;
+      color: var(--text-1);
+    }
+    .search-box-header svg { flex-shrink: 0; }
+    .btn-upload {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 7px 16px;
+      border-radius: var(--radius-btn);
+      font-size: 13px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-upload:hover { background: var(--primary-dark); }
+
+    /* 汉堡按钮 */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      width: 34px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-btn);
+    }
+    .hamburger:hover { background: var(--bg); }
+    .hamburger span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: var(--text-1);
+      border-radius: 1px;
+      position: relative;
+    }
+    .hamburger span::before,
+    .hamburger span::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 18px;
+      height: 2px;
+      background: var(--text-1);
+      border-radius: 1px;
+    }
+    .hamburger span::before { top: -6px; }
+    .hamburger span::after { top: 6px; }
+
+    /* 移动端抽屉 */
+    .mobile-nav-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 200;
+    }
+    .mobile-nav-overlay.active { display: block; }
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 280px;
+      height: 100vh;
+      background: var(--surface);
+      z-index: 201;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+      padding: 20px 0;
+      box-shadow: var(--shadow-hover);
+    }
+    .mobile-nav.active { transform: translateX(0); }
+    .mobile-nav-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      color: var(--text-2);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-btn);
+    }
+    .mobile-nav-close:hover { background: var(--bg); }
+    .mobile-nav .logo-wrap { padding: 0 20px 16px; border-bottom: 1px solid var(--divider); margin-bottom: 8px; }
+    .mobile-nav a {
+      display: block;
+      padding: 11px 24px;
+      font-size: 15px;
+      color: var(--text-2);
+      transition: background 0.15s;
+    }
+    .mobile-nav a:hover { background: var(--primary-bg); color: var(--primary); }
+
+    /* ===== 首屏 ===== */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: #fff;
+      padding: 64px 0 56px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(233,69,96,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -5%;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,107,129,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+    .hero-content { flex: 1; min-width: 0; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(233,69,96,0.15);
+      border: 1px solid rgba(233,69,96,0.35);
+      color: var(--primary-light);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+    }
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+    .hero-desc {
+      font-size: 15px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.8;
+      max-width: 580px;
+      margin-bottom: 28px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-btn-primary {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 11px 28px;
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .hero-btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .hero-btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 11px 28px;
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .hero-btn-secondary:hover { background: rgba(255,255,255,0.14); }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero-stat { display: flex; flex-direction: column; }
+    .hero-stat-num { font-size: 22px; font-weight: 700; color: var(--primary-light); }
+    .hero-stat-label { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+    .hero-visual {
+      flex-shrink: 0;
+      width: 280px;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .hero-visual svg { width: 100%; height: 100%; }
+    @keyframes heroPulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+    .hero-visual .pulse-ring { animation: heroPulse 3s ease-in-out infinite; }
+
+    /* ===== 主布局：三栏门户 ===== */
+    .page-layout {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 32px 24px;
+      display: grid;
+      grid-template-columns: 170px 1fr 240px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* 左栏频道索引 */
+    .channel-sidebar {
+      position: sticky;
+      top: var(--sticky-offset);
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 16px 0;
+      box-shadow: var(--shadow-default);
+      max-height: calc(100vh - var(--sticky-offset) - 16px);
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
+    .channel-sidebar h3 {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0 16px 10px;
+    }
+    .channel-sidebar a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      font-size: 13.5px;
+      color: var(--text-2);
+      transition: background 0.15s, color 0.15s;
+      border-left: 3px solid transparent;
+    }
+    .channel-sidebar a:hover { background: var(--primary-bg); color: var(--primary); }
+    .channel-sidebar a.active { border-left-color: var(--primary); color: var(--primary); font-weight: 600; background: var(--primary-bg); }
+    .channel-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+    /* 中主内容 */
+    .main-content { min-width: 0; display: flex; flex-direction: column; gap: 40px; }
+
+    .section-block { scroll-margin-top: var(--sticky-offset); }
+    .section-header { margin-bottom: 20px; }
+    .section-header h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-1);
+      line-height: 1.3;
+    }
+    .section-header p {
+      font-size: 13.5px;
+      color: var(--text-3);
+      margin-top: 4px;
+    }
+
+    /* 概览 */
+    .overview-text {
+      font-size: 14.5px;
+      color: var(--text-2);
+      line-height: 1.9;
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 24px 28px;
+      box-shadow: var(--shadow-default);
+    }
+    .overview-text p + p { margin-top: 14px; }
+    .overview-text strong { color: var(--text-1); }
+
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .content-card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-default);
+      transition: box-shadow 0.25s, transform 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .content-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
+    .card-img-wrap { position: relative; overflow: hidden; }
+    .card-img-wrap img { width: 100%; height: 160px; object-fit: cover; transition: transform 0.3s; }
+    .content-card:hover .card-img-wrap img { transform: scale(1.04); }
+    .card-type-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(233,69,96,0.92);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: var(--radius-tag);
+    }
+    .card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; }
+    .card-title { font-size: 15px; font-weight: 700; color: var(--text-1); margin-bottom: 6px; line-height: 1.4; }
+    .card-desc { font-size: 13px; color: var(--text-2); line-height: 1.6; flex: 1; margin-bottom: 10px; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+    .card-tags span {
+      font-size: 11px;
+      color: var(--primary);
+      background: var(--primary-bg);
+      padding: 2px 7px;
+      border-radius: var(--radius-tag);
+    }
+    .card-meta { display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: var(--text-3); }
+    .card-meta .heat { display: flex; align-items: center; gap: 4px; }
+
+    /* 更新列表 */
+    .update-list { display: flex; flex-direction: column; gap: 0; background: var(--surface); border-radius: var(--radius-card); box-shadow: var(--shadow-default); overflow: hidden; }
+    .update-item { display: flex; gap: 14px; padding: 14px 20px; border-bottom: 1px solid var(--divider); transition: background 0.15s; }
+    .update-item:last-child { border-bottom: none; }
+    .update-item:hover { background: var(--primary-bg); }
+    .update-thumb { width: 72px; height: 54px; border-radius: 6px; object-fit: cover; flex-shrink: 0; }
+    .update-info { flex: 1; min-width: 0; }
+    .update-title { font-size: 14px; font-weight: 600; color: var(--text-1); margin-bottom: 3px; }
+    .update-summary { font-size: 12.5px; color: var(--text-3); line-height: 1.5; }
+    .update-time { font-size: 11.5px; color: var(--text-3); flex-shrink: 0; align-self: center; white-space: nowrap; }
+
+    /* 分类入口 */
+    .category-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .category-item {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 18px 14px;
+      text-align: center;
+      box-shadow: var(--shadow-default);
+      transition: box-shadow 0.2s, transform 0.2s;
+      border: 1px solid transparent;
+    }
+    .category-item:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); border-color: var(--primary-light); }
+    .category-item .cat-icon { font-size: 24px; margin-bottom: 6px; }
+    .category-item .cat-name { font-size: 13.5px; font-weight: 600; color: var(--text-1); }
+    .category-item .cat-count { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+
+    /* 深度解析 */
+    .deep-dive { background: var(--surface); border-radius: var(--radius-card); padding: 28px 32px; box-shadow: var(--shadow-default); }
+    .deep-dive h3 { font-size: 17px; font-weight: 700; color: var(--text-1); margin: 22px 0 10px; padding-left: 12px; border-left: 3px solid var(--primary); }
+    .deep-dive h3:first-of-type { margin-top: 0; }
+    .deep-dive p { font-size: 14.5px; color: var(--text-2); line-height: 1.9; margin-bottom: 12px; }
+    .deep-dive ul { margin: 8px 0 14px 20px; }
+    .deep-dive ul li { font-size: 14px; color: var(--text-2); line-height: 1.8; margin-bottom: 6px; }
+    .deep-dive ul li strong { color: var(--text-1); }
+
+    /* 体验指南 */
+    .guide-steps { display: flex; flex-direction: column; gap: 14px; }
+    .guide-step {
+      display: flex;
+      gap: 16px;
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-default);
+    }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-body h4 { font-size: 15px; font-weight: 600; color: var(--text-1); margin-bottom: 4px; }
+    .step-body p { font-size: 13.5px; color: var(--text-2); line-height: 1.7; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 8px; }
+    .faq-list details {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+    }
+    .faq-list summary {
+      padding: 16px 20px;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--text-1);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: background 0.15s;
+    }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary:hover { background: var(--primary-bg); }
+    .faq-list summary::after {
+      content: '+';
+      font-size: 18px;
+      color: var(--primary);
+      font-weight: 400;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-list details[open] summary::after { content: '−'; }
+    .faq-answer { padding: 0 20px 16px; font-size: 13.5px; color: var(--text-2); line-height: 1.8; }
+
+    /* 评论 */
+    .comments-list { display: flex; flex-direction: column; gap: 10px; }
+    .comment-item {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 14px 18px;
+      box-shadow: var(--shadow-default);
+    }
+    .comment-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+    .comment-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .comment-name { font-size: 13px; font-weight: 600; color: var(--text-1); }
+    .comment-date { font-size: 11.5px; color: var(--text-3); margin-left: auto; }
+    .comment-text { font-size: 13.5px; color: var(--text-2); line-height: 1.7; }
+
+    /* 资讯 */
+    .news-list { display: flex; flex-direction: column; gap: 0; background: var(--surface); border-radius: var(--radius-card); box-shadow: var(--shadow-default); overflow: hidden; }
+    .news-item { padding: 16px 20px; border-bottom: 1px solid var(--divider); }
+    .news-item:last-child { border-bottom: none; }
+    .news-item:hover { background: var(--primary-bg); }
+    .news-title { font-size: 14.5px; font-weight: 600; color: var(--text-1); margin-bottom: 4px; }
+    .news-meta { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--text-3); margin-bottom: 4px; }
+    .news-summary { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+
+    /* 推荐标签 */
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag-cloud a {
+      background: var(--surface);
+      border: 1px solid var(--divider);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: var(--text-2);
+      transition: all 0.2s;
+    }
+    .tag-cloud a:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    /* 排行榜 */
+    .ranking-list { background: var(--surface); border-radius: var(--radius-card); box-shadow: var(--shadow-default); overflow: hidden; }
+    .ranking-item { display: flex; align-items: center; gap: 14px; padding: 13px 20px; border-bottom: 1px solid var(--divider); }
+    .ranking-item:last-child { border-bottom: none; }
+    .ranking-item:hover { background: var(--primary-bg); }
+    .rank-num { width: 24px; height: 24px; border-radius: 6px; background: var(--bg); color: var(--text-3); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ranking-item:nth-child(1) .rank-num { background: var(--primary); color: #fff; }
+    .ranking-item:nth-child(2) .rank-num { background: var(--primary-light); color: #fff; }
+    .ranking-item:nth-child(3) .rank-num { background: #ffb3c1; color: #fff; }
+    .rank-info { flex: 1; min-width: 0; }
+    .rank-title { font-size: 14px; font-weight: 600; color: var(--text-1); }
+    .rank-sub { font-size: 12px; color: var(--text-3); }
+    .rank-heat { font-size: 12px; color: var(--primary); font-weight: 600; flex-shrink: 0; }
+
+    /* 投稿互动 */
+    .interact-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .interact-card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 22px 22px;
+      box-shadow: var(--shadow-default);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .interact-card h4 { font-size: 16px; font-weight: 700; color: var(--text-1); }
+    .interact-card p { font-size: 13px; color: var(--text-2); line-height: 1.6; flex: 1; }
+    .interact-card .btn-sm {
+      align-self: flex-start;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 7px 18px;
+      border-radius: var(--radius-btn);
+      font-size: 13px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .interact-card .btn-sm:hover { background: var(--primary-dark); }
+
+    /* ===== 右栏辅助 ===== */
+    .aux-sidebar {
+      position: sticky;
+      top: var(--sticky-offset);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-height: calc(100vh - var(--sticky-offset) - 16px);
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
+    .aux-card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 18px 18px;
+      box-shadow: var(--shadow-default);
+    }
+    .aux-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-1);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--divider);
+    }
+    .hot-list { display: flex; flex-direction: column; gap: 8px; }
+    .hot-list a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.4;
+      padding: 3px 0;
+      transition: color 0.15s;
+    }
+    .hot-list a:hover { color: var(--primary); }
+    .hot-list .num { font-size: 11px; font-weight: 700; color: var(--text-3); width: 18px; flex-shrink: 0; }
+    .hot-list a:nth-child(-n+3) .num { color: var(--primary); }
+
+    .update-stream { display: flex; flex-direction: column; gap: 8px; }
+    .update-stream .stream-item { font-size: 12.5px; color: var(--text-2); line-height: 1.5; padding-left: 10px; border-left: 2px solid var(--divider); }
+    .update-stream .stream-item .time { font-size: 11px; color: var(--text-3); display: block; margin-top: 1px; }
+
+    /* 搜索无结果提示 */
+    .search-empty {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-3);
+      font-size: 14px;
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+    }
+    .search-empty.visible { display: block; }
+
+    /* ===== 页尾 ===== */
+    .site-footer {
+      background: var(--text-1);
+      color: rgba(255,255,255,0.65);
+      margin-top: 48px;
+      padding: 48px 0 28px;
+    }
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 36px;
+    }
+    .footer-brand .logo-text { color: #fff; font-size: 18px; }
+    .footer-brand p { font-size: 13px; line-height: 1.8; margin-top: 12px; max-width: 340px; }
+    .footer-group h4 { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .footer-group a { display: block; font-size: 13px; color: rgba(255,255,255,0.55); padding: 3px 0; transition: color 0.15s; }
+    .footer-group a:hover { color: var(--primary-light); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      box-shadow: var(--shadow-hover);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background 0.2s;
+      z-index: 90;
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-to-top:hover { background: var(--primary-dark); }
+
+    /* ===== 响应式 ===== */
+    @media (max-width: 1024px) {
+      .page-layout {
+        grid-template-columns: 1fr 240px;
+      }
+      .channel-sidebar { display: none; }
+      .hero-visual { width: 200px; height: 200px; }
+      .hero h1 { font-size: 32px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 740px) {
+      .page-layout {
+        grid-template-columns: 1fr;
+      }
+      .aux-sidebar {
+        position: static;
+        max-height: none;
+        overflow: visible;
+        order: 2;
+      }
+      .main-content { order: 1; }
+      .hamburger { display: flex; }
+      .header-nav { display: none; }
+      .search-box-header { display: none; }
+      .hero-inner { flex-direction: column; gap: 24px; text-align: center; }
+      .hero h1 { font-size: 28px; }
+      .hero-desc { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-visual { width: 160px; height: 160px; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .interact-panel { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 24px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .card-grid { grid-template-columns: 1fr; }
+      .deep-dive { padding: 20px; }
+      .back-to-top { bottom: 20px; right: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announce-bar">
+    <div class="announce-inner">
+      <span class="announce-brand">you jizz.com</span>
+      <span class="announce-item"><span class="tag">更新</span>11月7日 · 新增素人系列「夏目响」合辑 12 部</span>
+      <span class="announce-item"><span class="tag">榜单</span>本周热度榜 · 星美梨香「深夜办公室」登顶</span>
+      <span class="announce-item"><span class="tag">活动</span>用户评分系统上线 · 首周参与人数 1,240</span>
+    </div>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-wrap">
+        <svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="#1a1a2e"/>
+          <circle cx="16" cy="16" r="9" stroke="#e94560" stroke-width="2.5"/>
+          <path d="M13 11l8 5-8 5z" fill="#e94560"/>
+        </svg>
+        <span class="logo-text">you jizz.com</span>
+      </div>
+      <nav class="header-nav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选推荐</a>
+        <a href="/#updates">最新更新</a>
+        <a href="/#categories">分类导航</a>
+        <a href="/#deep-dive">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">用户评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#ranking">热度榜</a>
+        <a href="/#interact">投稿互动</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-box-header">
+          <input type="search" id="searchInput" placeholder="搜索条目..." aria-label="搜索内容条目">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b8b9e" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </div>
+        <button class="btn-upload" onclick="document.getElementById('interact').scrollIntoView({behavior:'smooth'})">投稿</button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 移动端抽屉 -->
+  <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="移动端导航">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="关闭菜单">×</button>
+    <div class="logo-wrap">
+      <svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="8" fill="#1a1a2e"/>
+        <circle cx="16" cy="16" r="9" stroke="#e94560" stroke-width="2.5"/>
+        <path d="M13 11l8 5-8 5z" fill="#e94560"/>
+      </svg>
+      <span class="logo-text">you jizz.com</span>
+    </div>
+    <a href="/#overview">领域概览</a>
+    <a href="/#featured">精选推荐</a>
+    <a href="/#updates">最新更新</a>
+    <a href="/#categories">分类导航</a>
+    <a href="/#deep-dive">深度解析</a>
+    <a href="/#guide">体验指南</a>
+    <a href="/#faq">常见问题</a>
+    <a href="/#comments">用户评论</a>
+    <a href="/#news">相关资讯</a>
+    <a href="/#ranking">热度榜</a>
+    <a href="/#interact">投稿互动</a>
+  </nav>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">● 内容聚合 · 分类导航</div>
+        <h1>you jizz.com</h1>
+        <p class="hero-desc">汇聚欧美、日本、素人、专业工作室等成人视频分类，提供条目评分、用户评论与最新更新追踪，帮助成年观众在具体类型中快速定位值得花时间的作品。</p>
+        <div class="hero-actions">
+          <button class="hero-btn-primary" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'})">浏览精选条目</button>
+          <button class="hero-btn-secondary" onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">查看分类导航</button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="hero-stat-num">2,460</span><span class="hero-stat-label">收录条目</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">186</span><span class="hero-stat-label">本周更新</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">11月7日</span><span class="hero-stat-label">最近更新</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="140" cy="140" r="120" stroke="rgba(233,69,96,0.15)" stroke-width="1"/>
+          <circle cx="140" cy="140" r="95" stroke="rgba(233,69,96,0.22)" stroke-width="1"/>
+          <circle cx="140" cy="140" r="70" stroke="rgba(233,69,96,0.3)" stroke-width="1"/>
+          <circle cx="140" cy="140" r="45" stroke="rgba(233,69,96,0.45)" stroke-width="1.5"/>
+          <circle cx="140" cy="140" r="22" fill="rgba(233,69,96,0.15)" stroke="rgba(233,69,96,0.6)" stroke-width="2"/>
+          <path d="M134 130l14 10-14 10z" fill="#e94560"/>
+          <circle cx="140" cy="140" r="120" stroke="rgba(255,107,129,0.08)" stroke-width="8" class="pulse-ring"/>
+          <circle cx="65" cy="80" r="4" fill="#ff6b81" opacity="0.6"/>
+          <circle cx="210" cy="95" r="3" fill="#e94560" opacity="0.5"/>
+          <circle cx="230" cy="180" r="5" fill="#ff6b81" opacity="0.4"/>
+          <circle cx="80" cy="210" r="3" fill="#e94560" opacity="0.5"/>
+          <line x1="65" y1="80" x2="140" y2="140" stroke="rgba(233,69,96,0.12)" stroke-width="1"/>
+          <line x1="210" y1="95" x2="140" y2="140" stroke="rgba(233,69,96,0.12)" stroke-width="1"/>
+          <line x1="230" y1="180" x2="140" y2="140" stroke="rgba(233,69,96,0.1)" stroke-width="1"/>
+          <line x1="80" y1="210" x2="140" y2="140" stroke="rgba(233,69,96,0.1)" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主布局 -->
+  <div class="page-layout">
+
+    <!-- 左栏：频道索引 -->
+    <aside class="channel-sidebar" aria-label="频道索引">
+      <h3>频道索引</h3>
+      <a href="/#overview" class="active"><span class="channel-dot" style="background:#e94560"></span>领域概览</a>
+      <a href="/#featured"><span class="channel-dot" style="background:#ff6b81"></span>精选推荐</a>
+      <a href="/#updates"><span class="channel-dot" style="background:#ffb3c1"></span>最新更新</a>
+      <a href="/#categories"><span class="channel-dot" style="background:#e94560"></span>分类导航</a>
+      <a href="/#deep-dive"><span class="channel-dot" style="background:#c2314a"></span>深度解析</a>
+      <a href="/#guide"><span class="channel-dot" style="background:#ff6b81"></span>体验指南</a>
+      <a href="/#faq"><span class="channel-dot" style="background:#ffb3c1"></span>常见问题</a>
+      <a href="/#comments"><span class="channel-dot" style="background:#e94560"></span>用户评论</a>
+      <a href="/#news"><span class="channel-dot" style="background:#c2314a"></span>相关资讯</a>
+      <a href="/#related"><span class="channel-dot" style="background:#ff6b81"></span>相关推荐</a>
+      <a href="/#ranking"><span class="channel-dot" style="background:#e94560"></span>热度榜</a>
+      <a href="/#interact"><span class="channel-dot" style="background:#c2314a"></span>投稿互动</a>
+    </aside>
+
+    <!-- 中主内容 -->
+    <main class="main-content">
+
+      <!-- 搜索无结果提示 -->
+      <div class="search-empty" id="searchEmpty">
+        <p>没有找到匹配的条目</p>
+        <p style="font-size:13px;margin-top:6px;">试试「素人」「日本」「办公室」等关键词</p>
+      </div>
+
+      <!-- ① 领域概览 -->
+      <section class="section-block" id="overview">
+        <div class="section-header">
+          <h2>成人视频内容类型与当前热门方向</h2>
+          <p>从制作模式、地域风格到发布节奏的横向梳理</p>
+        </div>
+        <div class="overview-text">
+          <p>成人视频内容按制作模式大致分为<strong>专业工作室出品</strong>、<strong>素人自拍/投稿</strong>、<strong>独立创作者付费订阅</strong>三条线。专业工作室以日本厂商（S1、Moodyz、Prestige）和欧美平台（Brazzers、Reality Kings）为代表，有固定拍摄流程和演员签约体系，单片时长通常在 90—150 分钟，画质稳定在 1080p 以上。素人投稿类内容单条时长偏短，多数在 10—30 分钟，画质参差，但场景更贴近日常。</p>
+          <p>当前值得注意的方向有三个。其一，<strong>VR 成人内容</strong>在 2026 年下半年出货量明显上升，Prestige 和 KMP 分别推出了 8K VR 系列，适配 Meta Quest 3 和 Pico 4。其二，<strong>素人系列品牌化</strong>——S-Cute、Tokyo Hot、加勒比等老牌素人厂牌在 10 月密集更新了「夏目响」「河北彩花」等专属合辑，单集合辑条目数在 10—15 部。其三，<strong>用户评分权重上升</strong>，多个聚合站把用户打分从辅助排序改为进入首页推荐的前置条件，评分低于 3.5/5 的条目很难获得首页曝光。</p>
+          <p>地域风格差异仍然明显：日本作品偏重剧情铺垫和场景设定，欧美作品节奏更快、对白更少，素人内容则介于两者之间。按题材搜索量排序，办公室、家庭、校园、旅行是 2026 年 10 月站内搜索频次最高的四个场景词。</p>
+        </div>
+      </section>
+
+      <!-- ② 精选推荐 -->
+      <section class="section-block" id="featured">
+        <div class="section-header">
+          <h2>本周精选条目推荐</h2>
+          <p>按用户评分与更新热度筛选的 8 个具体条目</p>
+        </div>
+        <div class="card-grid" id="featuredGrid">
+          <article class="content-card" data-search="星美梨香 深夜办公室 日本 剧情">
+            <div class="card-img-wrap">
+              <img src="https://picsum.photos/seed/jizz-staroffice1/400/300" alt="星美梨香深夜办公室场景剧照" width="400" height="300" loading="lazy">
+              <span class="card-type-badge">日本 · 剧情</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">星美梨香「深夜办公室」</h3>
+              <p class="card-desc">S1 于 11 月 5 日发布，片长 120 分钟，围绕加班场景展开三段式剧情。星美梨香的台词量比上一部增加约四成，节奏偏缓。</p>
+              <div class="card-tags"><span>办公室</span><span>剧情向</span><span>S1</span></div>
+              <div class="card-meta"><span class="heat">🔥 热度 9,820</span><span>★ 4.6</span></div>
+            </div>
+          </article>
+          <article class="content-card" data-search="夏目响 素人 合辑 S-Cute">
+            <div class="card-img-wrap">
+              <img src="https://picsum.photos/seed/jizz-natsume2/400/300" alt="夏目响素人合辑封面" width="400" height="300" loading="lazy">
+              <span class="card-type-badge">素人 · 合辑</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">夏目响 S-Cute 专属合辑 12 部</h3>
+              <p class="card-desc">11 月 7 日上线的合辑包，收录 2025 年 3 月至 2026 年 9 月间的 12 部作品，按拍摄时间排序。早期作品画质为 720p，后 5 部为 1080p。</p>
+              <div class="card-tags"><span>素人</span><span>S-Cute</span><span>合辑</span></div>
+              <div class="card-meta"><span class="heat">🔥 热度 8,450</span><span>★ 4.3</span></div>
+            </div>
+          </article>
+          <article class="content-card" data-search="河北彩花 VR 8K Prestige">
+            <div class="card-img-wrap">
+              <img src="https://picsum.photos/seed/jizz-kawakita3/400/300" alt="河北彩花VR作品预览画面" width="400" height="300" loading="lazy">
+              <span class="card-type-badge">VR · 8K</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">河北彩花 8K VR「同栖生活」</h3>
+              <p class="card-desc">Prestige 10 月 28 日发布，适配 Quest 3 和 Pico 4，单视角时长 45 分钟。相比 4K 版本，暗部细节提升明显，但文件体积达到 28GB。</p>
+              <div class="card-tags"><span>VR</span><span>8K</span><span>Prestige</span></div>
+              <div class="card-meta"><span class="heat">🔥 热度 7,960</span><span>★ 4.5</span></div>
+            </div>
+          </article>
+          <article class="content-card" data-search="Brazzers 欧美 办公室 2026">
+            <div class="card-img-wrap">
+              <img src="https://picsum.photos/seed/jizz-brazzers4/400/300" alt="Brazzers办公室系列场景" width="400" height="300" loading="lazy">
+              <span class="card-type-badge">欧美 · 工作室</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Brazzers「Office Obsession」第 14 季</h3>
+              <p class="card-desc">10 月 30 日更新第 14 季首集，单集 55 分钟，延续办公室场景系列。演员阵容新增两位签约新人，对白比例比上一季减少约 15%。</p>
+              <div class="card-tags"><span>欧美</span><span>办公室</span><span>Brazzers</span></div>
+              <div class="card-meta"><span class="heat">🔥 热度 7,210</span><span>★ 4.2</span></div>
+            </div>
+          </article>
+          <article class="content-card" data-search="加勒比 素人 旅行 合辑">
+            <div class="card-img-wrap">
+              <img src="https://picsum.photos/seed/jizz-carib5/400/300" alt="加勒比旅行素人系列封面" width="400" height="300" loading="lazy">
+              <span class="card-type-badge">素人 · 旅行</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">加勒比「旅行素人」冲绳篇 6 部</h3>
+              <p class="card-desc">11 月 2 日更新冲绳外景系列，6 部作品均在海边民宿拍摄，单部 25—35 分钟。外景收音一般，有两部能听到明显风声。</p>
+              <div class="card-tags"><span>旅行</span><span>素人</span><span>加勒比</span></div>
+              <div class="card-meta"><span class="heat">🔥 热度 6,870</span><span>★ 3.9</span></div>
+            </div>
+          </article>
+          <article class="content-card" data-search="深田咏美 校园 Moodyz">
+            <div class="card-img-wrap">
+              <img src="https://picsum.photos/seed/jizz-fukada6/400/300" alt="深田咏美校园题材作品截图" width="400" height="300" loading="lazy">
+              <span class="card-type-badge">日本 · 校园</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">深田咏美「放课后」Moodyz 新作</h3>
+              <p class="card-desc">11 月 4 日上架，片长 135 分钟，校园场景分教室、天台、社团活动室三段。深田咏美在本作中首次尝试双角色设定。</p>
+              <div class="card-tags"><span>校园</span><span>剧情向</span><span>Moodyz</span></div>
+              <div class="card-meta"><span class="heat">🔥 热度 6,540</span><span>★ 4.4</span></div>
+            </div>
+          </article>
+          <article class="content-card" data-search="Reality Kings 素人 情侣 欧美">
+            <div class="card-img-wrap">
+              <img src="https://picsum.photos/seed/jizz-rk7/400/300" alt="Reality Kings情侣素人系列画面" width="400" height="300" loading="lazy">
+              <span class="card-type-badge">欧美 · 素人</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Reality Kings「Couples」第 8 集</h3>
+              <p class="card-desc">10 月 25 日更新，本集为情侣自拍投稿，时长 38 分钟，手持镜头为主。画质在 1080p 和 720p 之间波动，剪辑痕迹较少。</p>
+              <div class="card-tags"><span>情侣</span><span>自拍</span><span>Reality Kings</span></div>
+              <div class="card-meta"><span class="heat">🔥 热度 5,980</span><span>★ 3.8</span></div>
+            </div>
+          </article>
+          <article class="content-card" data-search="Tokyo Hot 素人 新人 2026">
+            <div class="card-img-wrap">
+              <img src="https://picsum.photos/seed/jizz-th8/400/300" alt="Tokyo Hot新人素人作品封面" width="400" height="300" loading="lazy">
+              <span class="card-type-badge">素人 · 新人</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Tokyo Hot 新人「美咲」首作</h3>
+              <p class="card-desc">10 月 29 日发布，素人新人首部作品，时长 28 分钟。拍摄场景为公寓室内，单机位固定镜头为主，画质 1080p。</p>
+              <div class="card-tags"><span>新人</span><span>素人</span><span>Tokyo Hot</span></div>
+              <div class="card-meta"><span class="heat">🔥 热度 5,420</span><span>★ 3.7</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ③ 最新更新 -->
+      <section class="section-block" id="updates">
+        <div class="section-header">
+          <h2>过去一周条目更新动态</h2>
+          <p>按发布时间排序的 10 条具体更新</p>
+        </div>
+        <div class="update-list" id="updateList">
+          <div class="update-item" data-search="星美梨香 深夜办公室 S1 11月5日">
+            <img class="update-thumb" src="https://picsum.photos/seed/jizz-up1/72/54" alt="星美梨香深夜办公室更新缩略图" width="72" height="54" loading="lazy">
+            <div class="update-info">
+              <div class="update-title">星美梨香「深夜办公室」S1 正式版上线</div>
+              <div class="update-summary">11 月 5 日 14:00 上架，含幕后花絮 12 分钟，正片 120 分钟。</div>
+            </div>
+            <span class="update-time">11月5日</span>
+          </div>
+          <div class="update-item" data-search="夏目响 S-Cute 合辑 11月7日">
+            <img class="update-thumb" src="https://picsum.photos/seed/jizz-up2/72/54" alt="夏目响合辑更新缩略图" width="72" height="54" loading="lazy">
+            <div class="update-info">
+              <div class="update-title">夏目响 S-Cute 专属合辑 12 部打包上架</div>
+              <div class="update-summary">11 月 7 日 09:00 更新，合辑包比单部购买节省约 35%。</div>
+            </div>
+            <span class="update-time">11月7日</span>
+          </div>
+          <div class="update-item" data-search="河北彩花 VR 8K Prestige 10月28日">
+            <img class="update-thumb" src="https://picsum.photos/seed/jizz-up3/72/54" alt="河北彩花VR作品更新缩略图" width="72" height="54" loading="lazy">
+            <div class="update-info">
+              <div class="update-title">河北彩花 8K VR「同栖生活」开放下载</div>
+              <div class="update-summary">10 月 28 日 18:00 上线，首日下载量 3,200 次，Quest 3 版本占 61%。</div>
+            </div>
+            <span class="update-time">10月28日</span>
+          </div>
+          <div class="update-item" data-search="加勒比 冲绳 旅行素人 11月2日">
+            <img class="update-thumb" src="https://picsum.photos/seed/jizz-up4/72/54" alt="加勒比冲绳篇更新缩略图" width="72" height="54" loading="lazy">
+            <div class="update-info">
+              <div class="update-title">加勒比「旅行素人」冲绳篇 6 部全部上架</div>
+              <div class="update-summary">11 月 2 日分批更新完毕，最后两部为 11 月 2 日 16:00 放出。</div>
+            </div>
+            <span class="update-time">11月2日</span>
+          </div>
+          <div class="update-item" data-search="深田咏美 放课后 Moodyz 11月4日">
+            <img class="update-thumb" src="https://picsum.photos/seed/jizz-up5/72/54" alt="深田咏美新作更新缩略图" width="72" height="54" loading="lazy">
+            <div class="update-info">
+              <div class="update-title">深田咏美「放课后」Moodyz 新作上架</div>
+              <div class="update-summary">11 月 4 日 12:00 发布，首日评分 4.4/5，参与评分人数 860。</div>
+            </div>
+            <span class="update-time">11月4日</span>
+          </div>
+          <div class="update-item" data-search="Brazzers Office Obsession 第14季 10月30日">
+            <img class="update-thumb" src="https://picsum.photos/seed/jizz-up6/72/54" alt="Brazzers第14季更新缩略图" width="72" height="54" loading="lazy">
+            <div class="update-info">
+              <div class="update-title">Brazzers「Office Obsession」第 14 季首集更新</div>
+              <div class="update-summary">10 月 30 日上线，第 14 季共计划 8 集，每周三更新一集。</div>
+            </div>
+            <span class="update-time">10月30日</span>
+          </div>
+          <div class="update-item" data-search="Tokyo Hot 美咲 新人 10月29日">
+            <img class="update-thumb" src="https://picsum.photos/seed/jizz-up7/72/54" alt="Tokyo Hot新人首作更新缩略图" width="72" height="54" loading="lazy">
+            <div class="update-info">
+              <div class="update-title">Tokyo Hot 新人「美咲」首作发布</div>
+              <div class="update-summary">10 月 29 日 10:00 上线，新人首作首发 48 小时内播放量 1.8 万。</div>
+            </div>
+            <span class="update-time">10月29日</span>
+          </div>
+          <div class="update-item" data-search="Reality Kings Couples 第8集 10月25日">
+            <img class="update-thumb" src="https://picsum.photos/seed/jizz-up8/72/54" alt="Reality Kings情侣系列更新缩略图" width="72" height="54" loading="lazy">
+            <div class="update-info">
+              <div class="update-title">Reality Kings「Couples」第 8 集更新</div>
+              <div class="update-summary">10 月 25 日 20:00 上线，本集投稿者为来自德州的一对情侣。</div>
+            </div>
+            <span class="update-time">10月25日</span>
+          </div>
+          <div class="update-item" data-search="S1 10月新片 合集 10月20日">
+            <img class="update-thumb" src="https://picsum.photos/seed/jizz-up9/72/54" alt="S1十月新片合集缩略图" width="72" height="54" loading="lazy">
+            <div class="update-info">
+              <div class="update-title">S1 十月新片合集 24 部整理上架</div>
+              <div class="update-summary">10 月 20 日汇总更新，含 6 部独占新作和 18 部常规更新。</div>
+            </div>
+            <span class="update-time">10月20日</span>
+          </div>
+          <div class="update-item" data-search="Prestige 8K VR 系列 10月15日">
+            <img class="update-thumb" src="https://picsum.photos/seed/jizz-up10/72/54" alt="Prestige 8K VR系列更新缩略图" width="72" height="54" loading="lazy">
+            <div class="update-info">
+              <div class="update-title">Prestige 8K VR 系列新增 4 部作品</div>
+              <div class="update-summary">10 月 15 日更新，该系列累计已发布 18 部 8K VR 作品。</div>
+            </div>
+            <span class="update-time">10月15日</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ④ 分类入口 -->
+      <section class="section-block" id="categories">
+        <div class="section-header">
+          <h2>按内容类型与场景查找</h2>
+          <p>8 个常用分类入口，点击进入对应条目列表</p>
+        </div>
+        <div class="category-grid">
+          <a href="/#featured" class="category-item" data-search="日本 剧情 工作室"><div class="cat-icon">🎬</div><div class="cat-name">日本剧情</div><div class="cat-count">486 部</div></a>
+          <a href="/#featured" class="category-item" data-search="欧美 工作室 Brazzers"><div class="cat-icon">🎥</div><div class="cat-name">欧美工作室</div><div class="cat-count">312 部</div></a>
+          <a href="/#featured" class="category-item" data-search="素人 自拍 投稿"><div class="cat-icon">📱</div><div class="cat-name">素人自拍</div><div class="cat-count">728 部</div></a>
+          <a href="/#featured" class="category-item" data-search="VR 8K 沉浸"><div class="cat-icon">🥽</div><div class="cat-name">VR 沉浸</div><div class="cat-count">94 部</div></a>
+          <a href="/#featured" class="category-item" data-search="办公室 职场 场景"><div class="cat-icon">💼</div><div class="cat-name">办公室场景</div><div class="cat-count">156 部</div></a>
+          <a href="/#featured" class="category-item" data-search="校园 学生 教室"><div class="cat-icon">🏫</div><div class="cat-name">校园场景</div><div class="cat-count">203 部</div></a>
+          <a href="/#featured" class="category-item" data-search="旅行 外景 民宿"><div class="cat-icon">🏖️</div><div class="cat-name">旅行外景</div><div class="cat-count">88 部</div></a>
+          <a href="/#featured" class="category-item" data-search="新人 首作 素人"><div class="cat-icon">🌟</div><div class="cat-name">新人首作</div><div class="cat-count">65 部</div></a>
+        </div>
+      </section>
+
+      <!-- ⑤ 深度解析 -->
+      <section class="section-block" id="deep-dive">
+        <div class="section-header">
+          <h2>专业工作室与素人内容的核心差异</h2>
+          <p>从制作流程、画质、场景到消费决策的对照分析</p>
+        </div>
+        <div class="deep-dive">
+          <h3>制作周期与发布节奏</h3>
+          <p>S1 一部常规作品的制作周期在 45—60 天，从企划、选角、拍摄到后期剪辑和审查。2026 年 10 月 S1 公布的月度排期表显示，当月上线 24 部，平均每 1.25 天一部。素人厂牌如 S-Cute 的周期短得多，单部从拍摄到上线通常 7—14 天，很多是拍摄当天完成粗剪。这一差异直接体现在内容形态上：专业作品有完整剧本和三段式结构，素人作品更像「记录」，场景和对话更随机。</p>
+          <p>发布节奏也不同。专业工作室按月排期，素人厂牌按批次更新，一次放出 5—10 部。11 月 7 日 S-Cute 的夏目响合辑就是一次性放出 12 部，而非逐部上线。</p>
+
+          <h3>画质与观看设备门槛</h3>
+          <p>2026 年下半年，专业工作室的 1080p 已是底线，4K 覆盖率约 68%（以 S1、Moodyz、Prestige 三家 10 月发布作品统计）。素人内容 1080p 覆盖率约 42%，仍有相当比例停留在 720p。VR 内容的门槛更高：河北彩花 8K VR 单文件 28GB，Quest 3 本地播放需要至少 64GB 存储余量，串流则需要稳定 200Mbps 以上带宽。</p>
+          <p>画质差异影响的不只是清晰度。4K 作品的暗部细节和肤色还原明显更好，但文件体积大，对存储和带宽要求高。720p 的素人内容在手机屏幕上观看差别不大，投到电视上则噪点明显。</p>
+
+          <h3>场景可信度与实际观感</h3>
+          <p>专业工作室的场景是搭建或租赁的，办公室、教室、医院都是道具和布景。素人内容的场景是真实住宅、民宿、酒店房间，家具摆放和光线更杂乱，但也更接近日常经验。加勒比冲绳篇的 6 部作品全部在海边民宿实拍，能听到风声和远处车流，这种「不完美」恰恰是部分观众选择素人内容的原因。</p>
+          <p>值得拆开看的是「真实感」的来源。素人内容的真实感来自三个环节：非职业演员的反应、未经过度修饰的布光、以及拍摄者与被拍摄者之间的即兴互动。任何一个环节被过度设计，真实感就会打折。Tokyo Hot 新人美咲的首作之所以评分只有 3.7/5，评论区提到最多的是「摆拍痕迹重」——机位固定、对话生硬，失去了素人内容应有的随机性。</p>
+
+          <h3>评分体系与消费决策</h3>
+          <p>聚合站的评分通常由用户打分、完播率、收藏数三项加权。以站内 10 月数据为例，评分 4.5 以上的条目平均完播率 72%，评分 3.5 以下的条目平均完播率 41%。这个差距意味着：评分低的条目不是「不好看」，而是「看不完」。</p>
+          <p>判断一个条目值不值得投入时间，可以按以下顺序核对：</p>
+          <ul>
+            <li><strong>制作方</strong>——S1、Moodyz 的品控相对稳定，素人厂牌波动大。</li>
+            <li><strong>演员</strong>——专属演员的作品通常比客串作品投入更多。</li>
+            <li><strong>时长与结构</strong>——90 分钟以上且有分段的，剧情完整度更高。</li>
+            <li><strong>评分分布</strong>——看 4 分和 5 分的比例，而不是只看平均分。平均 4.2 但 5 分占 60% 的条目，通常比平均 4.3 但分数集中在 4 分的条目更有亮点。</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ⑥ 体验指南 -->
+      <section class="section-block" id="guide">
+        <div class="section-header">
+          <h2>内容消费顺序与判断依据</h2>
+          <p>从类型选择到单条目筛选的四步路径</p>
+        </div>
+        <div class="guide-steps">
+          <div class="guide-step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>先定类型，再看条目</h4>
+              <p>剧情向选日本工作室（S1、Moodyz），节奏快选欧美（Brazzers、Reality Kings），追求日常感选素人厂牌（S-Cute、加勒比）。类型定了，筛选范围能缩小到原来的三分之一。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>核对制作方与演员</h4>
+              <p>同一演员在不同厂牌的表现差异可能很大。星美梨香在 S1 的作品平均评分 4.5，在部分素人厂牌的客串作品只有 3.6。先看制作方，再看演员是否专属签约。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>用评分分布代替平均分</h4>
+              <p>平均分容易被极端分数拉平。打开评分分布，看 5 分和 1 分的占比。5 分占 50% 以上、1 分低于 10% 的条目，踩雷概率最低。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h4>根据设备选画质</h4>
+              <p>手机观看 1080p 足够，电视或投影建议选 4K，VR 设备才需要 8K。8K VR 单文件 28GB，本地播放需要预留存储空间，串流则要测速。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ⑦ FAQ -->
+      <section class="section-block" id="faq">
+        <div class="section-header">
+          <h2>常见问题解答</h2>
+          <p>关于内容类型、评分与观看方式的 6 个具体问答</p>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>日本工作室和素人厂牌的作品有什么区别？</summary>
+            <div class="faq-answer">日本工作室有固定剧本和分段结构，单片 90—150 分钟，制作周期 45—60 天，画质以 1080p 和 4K 为主。素人厂牌单部 10—35 分钟，拍摄到上线通常 7—14 天，画质参差，场景更贴近日常。选剧情完整度就选前者，选生活感和随机性就选后者。</div>
+          </details>
+          <details>
+            <summary>评分 3.5 和 4.5 的条目实际观感差多少？</summary>
+            <div class="faq-answer">按站内 10 月数据，4.5 分以上的条目平均完播率 72%，3.5 分以下只有 41%。差距主要体现在中途弃看的比例上。3.5 分的条目通常有明确短板——机位单一、对话生硬或画质不佳，但不代表没有可取之处。</div>
+          </details>
+          <details>
+            <summary>8K VR 内容需要什么设备才能播放？</summary>
+            <div class="faq-answer">河北彩花 8K VR「同栖生活」适配 Meta Quest 3 和 Pico 4，单文件 28GB。本地播放需要至少 64GB 存储余量，串流则需要 200Mbps 以上稳定带宽。Quest 2 可以播放，但会降采样到 4K 分辨率，暗部细节损失明显。</div>
+          </details>
+          <details>
+            <summary>素人合辑里的早期作品画质为什么差一些？</summary>
+            <div class="faq-answer">夏目响 S-Cute 合辑 12 部中，2025 年 3 月至 12 月的 5 部为 720p，2026 年 1 月之后的 7 部为 1080p。合辑按拍摄时间排序，越往后画质越好。如果只关心画质，可以从第 6 部开始看。</div>
+          </details>
+          <details>
+            <summary>为什么有些条目的评分人数很少但分数很高？</summary>
+            <div class="faq-answer">新上架条目在 48 小时内评分人数通常只有几十到几百。深田咏美「放课后」首日 860 人评分，属于正常范围。评分人数低于 50 的条目，平均分参考价值有限，建议等一周后再看。</div>
+          </details>
+          <details>
+            <summary>办公室、校园这类场景标签怎么区分优劣？</summary>
+            <div class="faq-answer">场景标签本身不区分优劣，区分优劣的是场景的完成度。Brazzers 的 Office Obsession 系列有固定布景和灯光方案，场景稳定；素人厂牌的办公室场景多为真实办公室短期租用，光线和构图随机。看场景标签时，配合制作方一起判断更准确。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ⑧ 用户评论 -->
+      <section class="section-block" id="comments">
+        <div class="section-header">
+          <h2>用户评论与评分反馈</h2>
+          <p>16 条来自站内用户的真实留言</p>
+        </div>
+        <div class="comments-list">
+          <div class="comment-item"><div class="comment-header"><div class="comment-avatar">A</div><span class="comment-name">阿泽</span><span class="comment-date">11月7日</span></div><div class="comment-text">夏目响那个合辑画质前后差太多了，前 5 部 720p 看着像蒙了层灰。不过内容本身值 4 分以上。</div></div>
+          <div class="comment-item"><div class="comment-header"><div class="comment-avatar">B</div><span class="comment-name">老猫</span><span class="comment-date">11月7日</span></div><div class="comment-text">星美梨香新作台词多了反而有点拖，我还是喜欢她早期节奏快的那几部。</div></div>
+          <div class="comment-item"><div class="comment-header"><div class="comment-avatar">C</div><span class="comment-name">Nova</span><span class="comment-date">11月6日</span></div><div class="comment-text">Quest 3 播 8K VR 是真的爽，28GB 也认了。硬盘又得清一波。</div></div>
+          <div class="comment-item"><div class="comment-header"><div class="comment-avatar">D</div><span class="comment-name">小林</span><span class="comment-date">11月6日</span></div><div class="comment-text">加勒比冲绳篇风声太出戏了，第三部海边那段简直像在台风天拍的。</div></div>
+          <div class="comment-item"><div class="comment-header"><div class="comment-avatar">E</div><span class="comment-name">Kuma</span><span class="comment-date">11月5日</span></div><div class="comment-text">深田咏美双角色设定挺新鲜的，不过第二段转场有点硬。</div></div>
+          <div class="comment-item"><div class="comment-header"><div class="comment-avatar">F</div><span class="comment-name">阿茶</span><span class="comment-date">11月5日</span></div><div class="comment-text">Tokyo Hot 那个新人美咲，摆拍感太重，机位一动不动看了十分钟就关了。</div></div>
+          <div class="comment-item"><div class="comment-header"><div class="comment-avatar">G</div><span class="comment-name">Chen</span><span class="comment-date">11月4日</span></div><div class="comment-text">Brazzers 第 14 季首集还行，但新人演技确实一般，希望后面几集有改善。</div></div>
+          <div class="comment-item"><div class="comment-header"><div class="comment-avatar">H</div><span class="comment-name">南风</span><span class="comment-date">11月4日</span></div><div class="comment-text">评分分布那个建议有用。之前只看平均分踩了好几次雷，现在先看 5 分占比。</div></div>
+          <div class="comment-item"><div class="comment-header"><div class="comment-avatar">I</div><span class="comment-name">老周</span><span class="comment-date">11月3日</span></div><div class="comment-text">Reality Kings 情侣系列第 8 集画质忽高忽低，不过真实感确实比工作室作品强。</div></div>
+          <div class="comment-item"><div class="comment-header"><div class="comment-avatar">J</div><span class="comment-name">Yuki</span><span class="comment-date">11月3日</span></div><div class="comment-text">S1 十月合集 24 部整理得挺全，省得自己一部部找了。</div></div>
+          <div class="comment-item"><div class="comment-header"><div class="comment-avatar">K</div><span class="comment-name">大彭</span><span class="comment-date">11月2日</span></div><div class="comment-text">素人内容就是看个随机感，太精致反而没意思了。</div></div>
+          <div class="comment-item"><div class="comment-header"><div class="comment-avatar">L</div><span class="comment-name">Momo</span><span class="comment-date">11月2日</span></div><div class="comment-text">Prestige 8K VR 系列 18 部了，画质确实稳，但题材重复度有点高。</div></div>
+          <div class="comment-item"><div class="comment-header"><div class="comment-avatar">M</div><span class="comment-name">阿凯</span><span class="comment-date">11月1日</span></div><div class="comment-text">办公室场景还是 Brazzers 拍得稳，日本那边有些布景一看就是临时搭的。</div></div>
+          <div class="comment-item"><div class="comment-header"><div class="comment-avatar">N</div><span class="comment-name">Luna</span><span class="comment-date">10月31日</span></div><div class="comment-text">河北彩花 8K 暗部细节确实好，不过文件太大了，串流卡了两次才播完。</div></div>
+          <div class="comment-item"><div class="comment-header"><div class="comment-avatar">O</div><span class="comment-name">老吴</span><span class="comment-date">10月30日</span></div><div class="comment-text">评分人数少于 50 的条目真的别急着看，等一周分数就正常了。</div></div>
+          <div class="comment-item"><div class="comment-header"><div class="comment-avatar">P</div><span class="comment-name">小鹿</span><span class="comment-date">10月29日</span></div><div class="comment-text">深田咏美放课后天台那段光线处理得不错，但教室布景有点像样板间。</div></div>
+        </div>
+      </section>
+
+      <!-- ⑨ 相关资讯 -->
+      <section class="section-block" id="news">
+        <div class="section-header">
+          <h2>行业动态与厂牌更新资讯</h2>
+          <p>2026 年 10 月至 11 月的 6 条具体消息</p>
+        </div>
+        <div class="news-list">
+          <div class="news-item">
+            <div class="news-title">S1 公布 11 月排期：26 部新作，VR 占 4 部</div>
+            <div class="news-meta"><span>2026-11-06</span><span>来源：S1 官方排期表</span></div>
+            <div class="news-summary">11 月排期比 10 月增加 2 部，VR 作品从 2 部提升到 4 部，其中 2 部为 8K 规格。星美梨香、深田咏美各有一部独占新作在列。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">Prestige 8K VR 系列累计发布 18 部，Quest 3 用户占六成</div>
+            <div class="news-meta"><span>2026-11-04</span><span>来源：Prestige 内容报告</span></div>
+            <div class="news-summary">10 月新增 4 部后，该系列总数达到 18 部。下载端数据显示 Quest 3 用户占 61%，Pico 4 占 27%，串流播放比例首次超过本地播放。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">S-Cute 上线夏目响 12 部合辑，合辑包定价下调 35%</div>
+            <div class="news-meta"><span>2026-11-07</span><span>来源：S-Cute 更新日志</span></div>
+            <div class="news-summary">合辑包定价从单部累加的 28,800 日元降至 18,700 日元。12 部作品按拍摄时间排序，后期 7 部为 1080p 修复版。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">Brazzers 第 14 季新增两位签约演员，首集 10 月 30 日上线</div>
+            <div class="news-meta"><span>2026-10-30</span><span>来源：Brazzers 官方公告</span></div>
+            <div class="news-summary">第 14 季计划共 8 集，每周三更新一集。两位新人签约期均为一年，首集对白比例比上一季减少约 15%。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">Tokyo Hot 新人美咲首作 48 小时播放量 1.8 万</div>
+            <div class="news-meta"><span>2026-10-31</span><span>来源：Tokyo Hot 站内统计</span></div>
+            <div class="news-summary">该片为素人新人首作，单部 28 分钟，1080p 画质。评分 3.7/5，评论区集中反馈机位单一和对话生硬。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">加勒比冲绳外景系列完结，6 部作品全部上架</div>
+            <div class="news-meta"><span>2026-11-02</span><span>来源：加勒比更新通知</span></div>
+            <div class="news-summary">该系列 10 月 25 日开更，11 月 2 日更新完毕。6 部作品均在冲绳海边民宿实拍，最后两部于 11 月 2 日 16:00 放出。</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ⑩ 相关推荐 -->
+      <section class="section-block" id="related">
+        <div class="section-header">
+          <h2>继续探索的具体方向</h2>
+          <p>按题材、厂牌与类型延伸的 8 个入口</p>
+        </div>
+        <div class="tag-cloud">
+          <a href="/#featured">S1 独占新作</a>
+          <a href="/#featured">Moodyz 校园系列</a>
+          <a href="/#featured">S-Cute 素人合辑</a>
+          <a href="/#featured">Prestige 8K VR</a>
+          <a href="/#featured">Brazzers 办公室季</a>
+          <a href="/#featured">加勒比旅行外景</a>
+          <a href="/#featured">Tokyo Hot 新人首作</a>
+          <a href="/#featured">Reality Kings 情侣自拍</a>
+        </div>
+      </section>
+
+      <!-- ⑪ 热度榜 -->
+      <section class="section-block" id="ranking">
+        <div class="section-header">
+          <h2>本周站内热度榜</h2>
+          <p>按播放量与收藏数加权排序的前 8 个条目</p>
+        </div>
+        <div class="ranking-list">
+          <div class="ranking-item"><span class="rank-num">1</span><div class="rank-info"><div class="rank-title">星美梨香「深夜办公室」</div><div class="rank-sub">S1 · 11月5日 · 剧情向</div></div><span class="rank-heat">9,820</span></div>
+          <div class="ranking-item"><span class="rank-num">2</span><div class="rank-info"><div class="rank-title">夏目响 S-Cute 专属合辑</div><div class="rank-sub">S-Cute · 11月7日 · 素人</div></div><span class="rank-heat">8,450</span></div>
+          <div class="ranking-item"><span class="rank-num">3</span><div class="rank-info"><div class="rank-title">河北彩花 8K VR「同栖生活」</div><div class="rank-sub">Prestige · 10月28日 · VR</div></div><span class="rank-heat">7,960</span></div>
+          <div class="ranking-item"><span class="rank-num">4</span><div class="rank-info"><div class="rank-title">Brazzers「Office Obsession」第 14 季</div><div class="rank-sub">Brazzers · 10月30日 · 欧美</div></div><span class="rank-heat">7,210</span></div>
+          <div class="ranking-item"><span class="rank-num">5</span><div class="rank-info"><div class="rank-title">加勒比「旅行素人」冲绳篇</div><div class="rank-sub">加勒比 · 11月2日 · 旅行</div></div><span class="rank-heat">6,870</span></div>
+          <div class="ranking-item"><span class="rank-num">6</span><div class="rank-info"><div class="rank-title">深田咏美「放课后」</div><div class="rank-sub">Moodyz · 11月4日 · 校园</div></div><span class="rank-heat">6,540</span></div>
+          <div class="ranking-item"><span class="rank-num">7</span><div class="rank-info"><div class="rank-title">Reality Kings「Couples」第 8 集</div><div class="rank-sub">Reality Kings · 10月25日 · 情侣</div></div><span class="rank-heat">5,980</span></div>
+          <div class="ranking-item"><span class="rank-num">8</span><div class="rank-info"><div class="rank-title">Tokyo Hot 新人「美咲」首作</div><div class="rank-sub">Tokyo Hot · 10月29日 · 新人</div></div><span class="rank-heat">5,420</span></div>
+        </div>
+      </section>
+
+      <!-- ⑫ 投稿互动 -->
+      <section class="section-block" id="interact">
+        <div class="section-header">
+          <h2>投稿与用户互动</h2>
+          <p>分享条目信息、参与评分或推荐作品</p>
+        </div>
+        <div class="interact-panel">
+          <div class="interact-card">
+            <h4>推荐一个条目</h4>
+            <p>提交作品名称、厂牌、发布时间和一段简短说明。被采纳的推荐会出现在精选推荐板块。</p>
+            <button class="btn-sm" onclick="alert('投稿功能为示例演示')">填写推荐</button>
+          </div>
+          <div class="interact-card">
+            <h4>参与评分</h4>
+            <p>对已观看的条目打分并写一句短评。评分数据会进入条目详情页的分布统计。</p>
+            <button class="btn-sm" onclick="alert('评分功能为示例演示')">去评分</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右栏辅助 -->
+    <aside class="aux-sidebar" aria-label="辅助信息">
+      <div class="aux-card">
+        <h3>实时热榜</h3>
+        <div class="hot-list">
+          <a href="/#featured"><span class="num">1</span>星美梨香「深夜办公室」</a>
+          <a href="/#featured"><span class="num">2</span>夏目响 S-Cute 合辑</a>
+          <a href="/#featured"><span class="num">3</span>河北彩花 8K VR</a>
+          <a href="/#featured"><span class="num">4</span>Brazzers 第 14 季</a>
+          <a href="/#featured"><span class="num">5</span>深田咏美「放课后」</a>
+          <a href="/#featured"><span class="num">6</span>加勒比冲绳篇</a>
+          <a href="/#featured"><span class="num">7</span>Reality Kings 第 8 集</a>
+          <a href="/#featured"><span class="num">8</span>Tokyo Hot 美咲首作</a>
+        </div>
+      </div>
+      <div class="aux-card">
+        <h3>更新流</h3>
+        <div class="update-stream">
+          <div class="stream-item">夏目响合辑 12 部上架<span class="time">11月7日 09:00</span></div>
+          <div class="stream-item">星美梨香新作正式版<span class="time">11月5日 14:00</span></div>
+          <div class="stream-item">深田咏美「放课后」上架<span class="time">11月4日 12:00</span></div>
+          <div class="stream-item">加勒比冲绳篇完结<span class="time">11月2日 16:00</span></div>
+          <div class="stream-item">Brazzers 第 14 季首集<span class="time">10月30日 20:00</span></div>
+          <div class="stream-item">河北彩花 8K VR 开放下载<span class="time">10月28日 18:00</span></div>
+        </div>
+      </div>
+      <div class="aux-card">
+        <h3>评分说明</h3>
+        <p style="font-size:12.5px;color:var(--text-2);line-height:1.7;">评分由用户打分、完播率、收藏数三项加权。4.5 分以上条目平均完播率 72%，3.5 分以下为 41%。评分人数低于 50 的条目建议等一周后再参考。</p>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-wrap">
+            <svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="8" fill="#e94560"/>
+              <circle cx="16" cy="16" r="9" stroke="#fff" stroke-width="2.5"/>
+              <path d="M13 11l8 5-8 5z" fill="#fff"/>
+            </svg>
+            <span class="logo-text">you jizz.com</span>
+          </div>
+          <p>收录 2025 年 3 月至 2026 年 11 月间的 2,460 个条目，覆盖日本剧情、欧美工作室、素人自拍、VR 沉浸四类内容，按周更新排期与评分数据。</p>
+        </div>
+        <div class="footer-group">
+          <h4>内容频道</h4>
+          <a href="/#overview">领域概览</a>
+          <a href="/#featured">精选推荐</a>
+          <a href="/#updates">最新更新</a>
+          <a href="/#categories">分类导航</a>
+          <a href="/#deep-dive">深度解析</a>
+        </div>
+        <div class="footer-group">
+          <h4>用户服务</h4>
+          <a href="/#guide">体验指南</a>
+          <a href="/#faq">常见问题</a>
+          <a href="/#comments">用户评论</a>
+          <a href="/#interact">投稿互动</a>
+        </div>
+        <div class="footer-group">
+          <h4>数据与榜单</h4>
+          <a href="/#news">相关资讯</a>
+          <a href="/#ranking">热度榜</a>
+          <a href="/#related">相关推荐</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 you jizz.com · 内容聚合示例页面 · 数据为示例条目</span>
+        <span>最近更新：2026年11月7日 · 夏目响 S-Cute 合辑 12 部</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "you jizz.com",
+    "description": "成人视频内容聚合与分类导航，提供条目更新、评分、评论与热度榜。",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "日本工作室和素人厂牌的作品有什么区别？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "日本工作室有固定剧本和分段结构，单片 90—150 分钟，制作周期 45—60 天，画质以 1080p 和 4K 为主。素人厂牌单部 10—35 分钟，拍摄到上线通常 7—14 天，画质参差，场景更贴近日常。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "评分 3.5 和 4.5 的条目实际观感差多少？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "按站内 10 月数据，4.5 分以上的条目平均完播率 72%，3.5 分以下只有 41%。差距主要体现在中途弃看的比例上。3.5 分的条目通常有明确短板——机位单一、对话生硬或画质不佳。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "8K VR 内容需要什么设备才能播放？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "河北彩花 8K VR「同栖生活」适配 Meta Quest 3 和 Pico 4，单文件 28GB。本地播放需要至少 64GB 存储余量，串流则需要 200Mbps 以上稳定带宽。Quest 2 可以播放，但会降采样到 4K 分辨率。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "素人合辑里的早期作品画质为什么差一些？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "夏目响 S-Cute 合辑 12 部中，2025 年 3 月至 12 月的 5 部为 720p，2026 年 1 月之后的 7 部为 1080p。合辑按拍摄时间排序，越往后画质越好。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "为什么有些条目的评分人数很少但分数很高？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "新上架条目在 48 小时内评分人数通常只有几十到几百。深田咏美「放课后」首日 860 人评分，属于正常范围。评分人数低于 50 的条目，平均分参考价值有限。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "办公室、校园这类场景标签怎么区分优劣？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "场景标签本身不区分优劣，区分优劣的是场景的完成度。Brazzers 的 Office Obsession 系列有固定布景和灯光方案，场景稳定；素人厂牌的办公室场景多为真实办公室短期租用，光线和构图随机。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    (function() {
+      // 汉堡菜单
+      var hamburger = document.getElementById('hamburgerBtn');
+      var mobileNav = document.getElementById('mobileNav');
+      var overlay = document.getElementById('mobileOverlay');
+      var closeBtn = document.getElementById('mobileNavClose');
+
+      function openNav() {
+        mobileNav.classList.add('active');
+        overlay.classList.add('active');
+        hamburger.setAttribute('aria-expanded', 'true');
+      }
+      function closeNav() {
+        mobileNav.classList.remove('active');
+        overlay.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+
+      hamburger.addEventListener('click', function() {
+        if (mobileNav.classList.contains('active')) closeNav();
+        else openNav();
+      });
+      closeBtn.addEventListener('click', closeNav);
+      overlay.addEventListener('click', closeNav);
+      mobileNav.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', closeNav);
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeNav();
+      });
+
+      // 回到顶部
+      var backBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) {
+          backBtn.classList.add('visible');
+        } else {
+          backBtn.classList.remove('visible');
+        }
+      });
+      backBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 搜索筛选
+      var searchInput = document.getElementById('searchInput');
+      var featuredGrid = document.getElementById('featuredGrid');
+      var updateList = document.getElementById('updateList');
+      var searchEmpty = document.getElementById('searchEmpty');
+      var categoryItems = document.querySelectorAll('.category-item');
+
+      function doSearch() {
+        var q = searchInput.value.trim().toLowerCase();
+        var featuredCards = featuredGrid.querySelectorAll('.content-card');
+        var updateItems = updateList.querySelectorAll('.update-item');
+        var visibleCount = 0;
+
+        if (!q) {
+          featuredCards.forEach(function(c) { c.style.display = ''; });
+          updateItems.forEach(function(u) { u.style.display = ''; });
+          searchEmpty.classList.remove('visible');
+          return;
+        }
+
+        featuredCards.forEach(function(c) {
+          var data = (c.getAttribute('data-search') || '') + ' ' + c.textContent.toLowerCase();
+          if (data.indexOf(q) !== -1) {
+            c.style.display = '';
+            visibleCount++;
+          } else {
+            c.style.display = 'none';
+          }
+        });
+
+        updateItems.forEach(function(u) {
+          var data = (u.getAttribute('data-search') || '') + ' ' + u.textContent.toLowerCase();
+          if (data.indexOf(q) !== -1) {
+            u.style.display = '';
+            visibleCount++;
+          } else {
+            u.style.display = 'none';
+          }
+        });
+
+        if (visibleCount === 0) {
+          searchEmpty.classList.add('visible');
+        } else {
+          searchEmpty.classList.remove('visible');
+        }
+      }
+
+      searchInput.addEventListener('input', doSearch);
+
+      // 分类项点击 = 筛选
+      categoryItems.forEach(function(item) {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          var q = item.getAttribute('data-search') || '';
+          searchInput.value = q;
+          doSearch();
+          document.getElementById('featured').scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      // 侧栏高亮
+      var channelLinks = document.querySelectorAll('.channel-sidebar a');
+      var sections = document.querySelectorAll('.section-block');
+      window.addEventListener('scroll', function() {
+        var scrollPos = window.scrollY + 120;
+        var currentId = '';
+        sections.forEach(function(s) {
+          if (s.offsetTop <= scrollPos) currentId = s.id;
+        });
+        channelLinks.forEach(function(a) {
+          a.classList.toggle('active', a.getAttribute('href') === '/#' + currentId);
+        });
+      });
+    })();
+  </script>
+</body>
+            </html>
