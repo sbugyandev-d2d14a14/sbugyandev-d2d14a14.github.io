@@ -1,0 +1,930 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>性感美女热舞 - 舞蹈视频类型与舞者作品聚合</title>
+<meta name="description" content="性感美女热舞聚合爵士、韩舞、电臀、钢管舞等类型的热舞视频与舞者作品，含节目看点、舞种解析、入门路径与评论区实况，适合舞蹈爱好者挑片单与判断作品质量。">
+<meta name="keywords" content="性感美女热舞">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e11d63'/%3E%3Cpath d='M24 16c6 2 9 7 9 13 0 5-2 9-6 12l-4-3c3-2 5-5 5-9 0-5-2-8-6-10z' fill='%23fff'/%3E%3Ccircle cx='41' cy='22' r='4' fill='%23fde68a'/%3E%3C/svg%3E">
+<style>
+:root{
+  --brand:#e11d63;
+  --brand-l:#f472a6;
+  --brand-d:#9d1147;
+  --bg:#fdf7f9;
+  --panel:#ffffff;
+  --ink:#241b20;
+  --ink2:#5c5057;
+  --ink3:#8d8189;
+  --line:#f0dfe6;
+  --r-card:14px;
+  --r-btn:10px;
+  --r-tag:6px;
+  --r-banner:18px;
+  --sh:0 2px 10px rgba(120,40,70,.07);
+  --sh-h:0 8px 22px rgba(120,40,70,.14);
+  --stick:106px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--stick)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;font-size:15px;line-height:1.75}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;line-height:1.35}
+p{margin:0 0 12px}
+ul,ol{margin:0 0 12px;padding-left:20px}
+li{margin-bottom:6px}
+img{display:block;max-width:100%}
+button{font-family:inherit}
+
+/* 吸顶公告 + 页头 */
+.stick{position:sticky;top:0;z-index:60}
+.notice{background:linear-gradient(90deg,var(--brand-d),var(--brand));color:#fff;font-size:13px;display:flex;align-items:center;gap:10px;padding:7px 16px;overflow:hidden}
+.notice .nbrand{font-weight:700;letter-spacing:.5px;white-space:nowrap}
+.notice .nsep{opacity:.5}
+.notice .nlist{display:flex;gap:18px;overflow:hidden;white-space:nowrap;flex:1;mask-image:linear-gradient(90deg,#000 88%,transparent)}
+.notice .nlist span{display:inline-block}
+.notice .nlist b{color:#ffe1ec;font-weight:600}
+.head{background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);box-shadow:0 1px 0 rgba(120,40,70,.04)}
+.head-in{max-width:1360px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:18px;color:var(--brand-d);white-space:nowrap}
+.logo svg{width:32px;height:32px;flex:none}
+.nav{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+.nav a{padding:6px 10px;border-radius:var(--r-btn);font-size:14px;color:var(--ink2);transition:.18s}
+.nav a:hover{background:#fdeaf1;color:var(--brand-d)}
+.head-actions{display:flex;align-items:center;gap:8px}
+.search{display:flex;align-items:center;border:1px solid var(--line);border-radius:var(--r-btn);background:#fff;padding:4px 6px 4px 10px;gap:6px}
+.search input{border:0;outline:0;width:130px;font-size:13px;background:transparent;color:var(--ink)}
+.search button{border:0;background:var(--brand);color:#fff;border-radius:8px;padding:5px 10px;font-size:13px;cursor:pointer}
+.search button:hover{background:var(--brand-d)}
+.burger{display:none;border:1px solid var(--line);background:#fff;border-radius:var(--r-btn);width:38px;height:36px;align-items:center;justify-content:center;cursor:pointer}
+.burger span{display:block;width:16px;height:2px;background:var(--ink2);position:relative}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:16px;height:2px;background:var(--ink2)}
+.burger span::before{top:-5px}.burger span::after{top:5px}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px;border-radius:4px}
+
+/* 首屏 */
+.hero{position:relative;overflow:hidden;background:radial-gradient(1200px 400px at 80% -60%,#ffd7e7 0%,transparent 60%),linear-gradient(160deg,#2a0f1d 0%,#5c1335 45%,#a3184f 100%);color:#fff}
+.hero-in{max-width:1360px;margin:0 auto;padding:52px 20px 46px;display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:44px;letter-spacing:1px;margin-bottom:14px}
+.hero .lead{font-size:16px;line-height:1.85;color:#fbe3ec;max-width:560px;margin-bottom:16px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.hero .meta span{font-size:12.5px;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:4px 11px;color:#ffe4ef;background:rgba(255,255,255,.07)}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:var(--r-btn);font-size:14.5px;font-weight:600;transition:.2s}
+.btn-p{background:#fff;color:var(--brand-d)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:var(--sh-h)}
+.btn-g{border:1px solid rgba(255,255,255,.45);color:#fff}
+.btn-g:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+.hero-art{position:relative;height:280px}
+.hero-art svg{width:100%;height:100%}
+.hero-art .pulse{animation:pulse 4.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.55;transform:translateY(0)}50%{opacity:.95;transform:translateY(-6px)}}
+
+/* 布局 */
+.wrap{max-width:1360px;margin:0 auto;padding:28px 20px 56px;display:grid;grid-template-columns:200px minmax(0,1fr) 280px;gap:26px;align-items:start}
+.side{position:sticky;top:var(--stick);font-size:13.5px}
+.side-box{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);padding:14px;box-shadow:var(--sh);margin-bottom:16px}
+.side-box h3{font-size:13px;color:var(--ink3);font-weight:600;letter-spacing:.5px;margin-bottom:9px}
+.chan{display:flex;flex-direction:column;gap:2px}
+.chan a{display:flex;justify-content:space-between;align-items:center;padding:6px 9px;border-radius:8px;color:var(--ink2);transition:.16s}
+.chan a:hover,.chan a.active{background:#fdeaf1;color:var(--brand-d);font-weight:600}
+.chan a em{font-style:normal;font-size:11.5px;color:var(--ink3)}
+.rank-list{list-style:none;padding:0;margin:0;counter-reset:rk}
+.rank-list li{counter-increment:rk;display:flex;gap:8px;padding:6px 0;border-bottom:1px dashed var(--line);font-size:13px;color:var(--ink2)}
+.rank-list li:last-child{border-bottom:0}
+.rank-list li::before{content:counter(rk);flex:none;width:18px;height:18px;border-radius:5px;background:#fdeaf1;color:var(--brand-d);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:3px}
+.rank-list li:first-child::before{background:var(--brand);color:#fff}
+.upd{list-style:none;padding:0;margin:0;font-size:13px}
+.upd li{padding:6px 0;border-bottom:1px dashed var(--line);color:var(--ink2)}
+.upd li:last-child{border-bottom:0}
+.upd b{color:var(--brand-d);font-weight:600}
+.upd time{display:block;font-size:11.5px;color:var(--ink3)}
+
+/* 板块 */
+.block{margin-bottom:44px}
+.block-h{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+.block-h h2{font-size:23px;letter-spacing:.4px}
+.block-h .hint{font-size:13px;color:var(--ink3)}
+.block-sub{font-size:13.5px;color:var(--ink2);margin-bottom:18px}
+.sec-anchor{display:block;position:relative;top:-8px;visibility:hidden}
+
+/* 概览 */
+.overview{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);padding:22px 24px;box-shadow:var(--sh)}
+.overview p{color:var(--ink2);font-size:14.5px;line-height:1.9}
+.overview strong{color:var(--brand-d)}
+.ov-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.ov-tags span{font-size:12.5px;background:#fdeaf1;color:var(--brand-d);border-radius:var(--r-tag);padding:4px 10px}
+
+/* 卡片 */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(238px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;box-shadow:var(--sh);transition:.2s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-3px);box-shadow:var(--sh-h)}
+.card .thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:#f5e6ec}
+.card .thumb img{width:100%;height:100%;object-fit:cover;transition:.35s}
+.card:hover .thumb img{transform:scale(1.04)}
+.card .thumb .tagline{position:absolute;left:8px;top:8px;background:rgba(157,17,71,.88);color:#fff;font-size:11.5px;padding:2px 8px;border-radius:5px}
+.card .body{padding:12px 13px 14px;display:flex;flex-direction:column;gap:7px;flex:1}
+.card h3{font-size:15.5px;line-height:1.45}
+.card .desc{font-size:12.8px;color:var(--ink2);line-height:1.7;flex:1}
+.card .tags{display:flex;flex-wrap:wrap;gap:5px}
+.card .tags i{font-style:normal;font-size:11.5px;color:var(--brand-d);background:#fdeaf1;border-radius:5px;padding:1px 7px}
+.card .foot{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--ink3);border-top:1px solid var(--line);padding-top:8px}
+.card .foot b{color:var(--brand);font-weight:700}
+.card.hide{display:none}
+
+/* 列表 */
+.newslist{list-style:none;padding:0;margin:0;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden}
+.newslist li{display:flex;gap:14px;padding:13px 16px;border-bottom:1px solid var(--line);transition:.16s}
+.newslist li:last-child{border-bottom:0}
+.newslist li:hover{background:#fff6f9}
+.newslist .n{flex:none;width:64px;font-size:12px;color:var(--ink3);padding-top:2px}
+.newslist .c{min-width:0}
+.newslist .c h4{font-size:14.8px;margin-bottom:3px}
+.newslist .c p{font-size:13px;color:var(--ink2);margin:0;line-height:1.65}
+.newslist .c .who{font-size:11.8px;color:var(--brand-d);margin-top:3px}
+
+/* 分类 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.cat{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);padding:14px;transition:.18s;cursor:pointer;text-align:left;font-family:inherit}
+.cat:hover{border-color:var(--brand-l);box-shadow:var(--sh-h);transform:translateY(-2px)}
+.cat b{display:block;font-size:14.5px;color:var(--ink);margin-bottom:3px}
+.cat span{font-size:12px;color:var(--ink3);line-height:1.6;display:block}
+.cat.on{background:linear-gradient(160deg,#fff,#fdeaf1);border-color:var(--brand)}
+
+/* 深度解析 */
+.deep{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);padding:26px 28px;box-shadow:var(--sh)}
+.deep h3{font-size:18px;margin:24px 0 10px;padding-left:11px;border-left:3px solid var(--brand)}
+.deep h3:first-of-type{margin-top:4px}
+.deep p{font-size:14.5px;line-height:1.92;color:var(--ink2)}
+.deep ul{font-size:14.3px;color:var(--ink2);line-height:1.85}
+.deep strong{color:var(--ink)}
+.cmp{width:100%;border-collapse:collapse;font-size:13.3px;margin:12px 0 16px}
+.cmp th,.cmp td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.cmp th{background:#fdeaf1;color:var(--brand-d);font-weight:600}
+.cmp td:first-child{font-weight:600;color:var(--ink);white-space:nowrap}
+.callout{background:#fff6f9;border:1px dashed var(--brand-l);border-radius:10px;padding:12px 15px;font-size:13.5px;color:var(--ink2);margin:10px 0 16px}
+.callout b{color:var(--brand-d)}
+
+/* 指南步骤 */
+.steps{counter-reset:st;display:grid;gap:14px}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);padding:16px 18px 16px 60px;position:relative;box-shadow:var(--sh)}
+.step::before{counter-increment:st;content:counter(st);position:absolute;left:16px;top:16px;width:30px;height:30px;border-radius:9px;background:linear-gradient(150deg,var(--brand),var(--brand-d));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.step h4{font-size:15px;margin-bottom:5px}
+.step p{font-size:13.5px;color:var(--ink2);margin:0;line-height:1.8}
+
+/* FAQ */
+.faq{display:grid;gap:10px}
+.faq details{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);padding:0;overflow:hidden;box-shadow:var(--sh)}
+.faq summary{cursor:pointer;padding:14px 18px;font-size:14.8px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--brand);font-size:19px;font-weight:400;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq .a{padding:0 18px 15px;font-size:13.8px;color:var(--ink2);line-height:1.85}
+
+/* 评论 */
+.cmts{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.cmt{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);padding:13px 15px;box-shadow:var(--sh)}
+.cmt .who{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.cmt .av{width:26px;height:26px;border-radius:50%;background:linear-gradient(150deg,var(--brand-l),var(--brand-d));color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:700;flex:none}
+.cmt .nm{font-size:13px;font-weight:600}
+.cmt .tm{font-size:11.5px;color:var(--ink3);margin-left:auto}
+.cmt p{font-size:13.3px;color:var(--ink2);margin:0;line-height:1.75}
+.cmt .on{color:var(--brand-d);font-weight:600}
+
+/* 资讯 */
+.artlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.art{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;box-shadow:var(--sh);transition:.2s;display:flex;flex-direction:column}
+.art:hover{transform:translateY(-3px);box-shadow:var(--sh-h)}
+.art img{width:100%;height:150px;object-fit:cover}
+.art .b{padding:13px 15px 15px}
+.art .dt{font-size:11.8px;color:var(--brand-d);margin-bottom:5px}
+.art h4{font-size:15px;margin-bottom:6px;line-height:1.5}
+.art p{font-size:13px;color:var(--ink2);margin:0;line-height:1.75}
+
+/* 推荐标签 */
+.reco{display:flex;flex-wrap:wrap;gap:9px}
+.reco a{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:13.2px;color:var(--ink2);transition:.18s}
+.reco a:hover{background:var(--brand);color:#fff;border-color:var(--brand);transform:translateY(-2px)}
+
+/* 榜单/时间线 */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-card);padding:18px 20px;box-shadow:var(--sh)}
+.panel h3{font-size:16px;margin-bottom:12px;display:flex;align-items:center;gap:7px}
+.panel h3::before{content:"";width:4px;height:15px;background:var(--brand);border-radius:2px}
+.bill{list-style:none;padding:0;margin:0}
+.bill li{display:flex;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13.5px;align-items:baseline}
+.bill li:last-child{border-bottom:0}
+.bill .idx{flex:none;font-weight:700;color:var(--brand);width:16px}
+.bill .t{flex:1;color:var(--ink)}
+.bill .v{font-size:12px;color:var(--ink3);white-space:nowrap}
+.tl{list-style:none;padding:0 0 0 18px;margin:0;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 14px 14px;font-size:13.3px;color:var(--ink2)}
+.tl li::before{content:"";position:absolute;left:-25px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--brand);border:2px solid #fff;box-shadow:0 0 0 1px var(--brand-l)}
+.tl b{color:var(--ink);display:block;font-size:13.8px}
+.tl time{font-size:11.5px;color:var(--ink3);display:block}
+
+/* 投稿 */
+.submit{background:linear-gradient(150deg,#fff,#fdeaf1);border:1px solid var(--brand-l);border-radius:var(--r-banner);padding:22px 24px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+.submit h3{font-size:18px;margin-bottom:6px}
+.submit p{font-size:13.5px;color:var(--ink2);margin:0;line-height:1.8}
+.submit .btn-p{background:var(--brand);color:#fff}
+.submit .btn-p:hover{background:var(--brand-d)}
+
+/* 页尾 */
+.foot{background:#2a0f1d;color:#e8d3dc;padding:38px 20px 26px;font-size:13.5px}
+.foot-in{max-width:1360px;margin:0 auto}
+.foot-top{display:grid;grid-template-columns:1.2fr 2fr;gap:34px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.13)}
+.foot .fl{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:700;color:#fff;margin-bottom:10px}
+.foot .fl svg{width:28px;height:28px}
+.foot .pos{color:#c9a9b6;line-height:1.85;font-size:13px}
+.foot-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.foot-cols h4{font-size:13px;color:#fff;margin-bottom:8px;letter-spacing:.4px}
+.foot-cols a{display:block;color:#c9a9b6;padding:3px 0;font-size:12.8px}
+.foot-cols a:hover{color:var(--brand-l)}
+.foot-btm{padding-top:18px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:#a3848f}
+
+/* 回顶 */
+.top{position:fixed;right:18px;bottom:22px;width:44px;height:44px;border-radius:12px;border:0;background:var(--brand);color:#fff;font-size:18px;cursor:pointer;box-shadow:var(--sh-h);opacity:0;pointer-events:none;transition:.25s;z-index:70}
+.top.show{opacity:1;pointer-events:auto}
+.top:hover{background:var(--brand-d);transform:translateY(-3px)}
+
+/* 遮罩 */
+.mask{position:fixed;inset:0;background:rgba(42,15,29,.45);opacity:0;pointer-events:none;transition:.2s;z-index:65}
+.mask.show{opacity:1;pointer-events:auto}
+
+@media (max-width:1100px){
+  .wrap{grid-template-columns:180px minmax(0,1fr)}
+  .wrap .side-r{grid-column:1/-1;position:static}
+  .wrap .side-r .side-box{display:inline-block;vertical-align:top;width:calc(50% - 9px);margin-right:14px}
+  .hero h1{font-size:36px}
+}
+@media (max-width:1024px){
+  .nav{display:none}
+  .burger{display:flex}
+  .nav.open{display:flex;position:fixed;top:calc(var(--stick) + 0px);left:0;right:0;background:#fff;padding:12px 16px;flex-direction:column;box-shadow:var(--sh-h);z-index:66;max-height:70vh;overflow:auto}
+  .nav.open a{padding:10px 8px;border-bottom:1px solid var(--line)}
+  .hero-in{grid-template-columns:1fr;padding:38px 20px 34px}
+  .hero-art{height:200px;order:-1}
+  .hero h1{font-size:34px}
+  .two{grid-template-columns:1fr}
+}
+@media (max-width:740px){
+  .wrap{grid-template-columns:1fr;padding:18px 14px 40px}
+  .wrap .side{position:static}
+  .wrap .side-l{order:2}
+  .wrap .side-r{order:3}
+  .side-r .side-box{width:100%;margin-right:0}
+  .chan{flex-direction:row;flex-wrap:wrap}
+  .chan a{flex:1 1 45%;border:1px solid var(--line);justify-content:center}
+  .hero h1{font-size:27px}
+  .hero .lead{font-size:14.5px}
+  .head-in{padding:8px 14px;gap:10px}
+  .logo{font-size:15.5px}
+  .search input{width:96px}
+  .notice{font-size:12px;padding:6px 12px}
+  .notice .nlist{gap:14px}
+  .deep{padding:20px 18px}
+  .block-h h2{font-size:20px}
+  .submit{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .foot-cols{grid-template-columns:1fr 1fr}
+  .cards{grid-template-columns:1fr 1fr;gap:10px}
+  .card .body{padding:10px}
+  .card h3{font-size:14px}
+  .card .desc{font-size:12px}
+  .cmts{grid-template-columns:1fr}
+}
+@media (max-width:420px){
+  .cards{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="stick">
+  <div class="notice" role="region" aria-label="更新公告">
+    <span class="nbrand">性感美女热舞</span>
+    <span class="nsep">|</span>
+    <div class="nlist">
+      <span><b>11月7日</b> 新增《凌晨练习室·爵士版》第 3 支</span>
+      <span><b>11月6日</b> 韩舞频道收录 14 支翻跳</span>
+      <span><b>11月5日</b> 钢管舞专题上线 9 支完整版</span>
+      <span><b>11月8日</b> 本周热舞榜单刷新</span>
+    </div>
+  </div>
+  <header class="head">
+    <div class="head-in">
+      <a class="logo" href="/#top" aria-label="性感美女热舞 首页">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#e11d63"/><path d="M24 16c6 2 9 7 9 13 0 5-2 9-6 12l-4-3c3-2 5-5 5-9 0-5-2-8-6-10z" fill="#fff"/><circle cx="41" cy="22" r="4" fill="#fde68a"/><path d="M20 46c8 4 18 4 26 0" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none" opacity=".7"/></svg>
+        性感美女热舞
+      </a>
+      <nav class="nav" id="mainNav" aria-label="频道导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#picks">精选推荐</a>
+        <a href="/#updates">最新更新</a>
+        <a href="/#cats">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">观看路径</a>
+        <a href="/#faq">问答</a>
+        <a href="/#cmts">评论</a>
+        <a href="/#news">资讯</a>
+        <a href="/#reco">相关推荐</a>
+        <a href="/#submit">投稿</a>
+      </nav>
+      <div class="head-actions">
+        <div class="search">
+          <input id="q" type="search" placeholder="搜作品或舞种" aria-label="站内搜索作品或舞种">
+          <button id="qbtn" type="button">查找</button>
+        </div>
+        <button class="burger" id="burger" type="button" aria-label="打开频道菜单" aria-expanded="false" aria-controls="mainNav"><span></span></button>
+      </div>
+    </div>
+  </header>
+</div>
+<div class="mask" id="mask"></div>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-in">
+      <div>
+        <h1>性感美女热舞</h1>
+        <p class="lead">爵士、韩舞、电臀、钢管、椅子舞五类热舞作品的入口：收录单人练习室、双人编舞、舞台直拍与完整版 MV 舞蹈段落，标注舞者、曲目、时长和机位，方便按舞种和难度挑片。</p>
+        <div class="meta">
+          <span>收录作品 312 支</span>
+          <span>舞者档案 68 位</span>
+          <span>舞种 5 类</span>
+          <span>更新至 2026-11-07</span>
+        </div>
+        <div class="cta">
+          <a class="btn btn-p" href="/#picks">看本周精选</a>
+          <a class="btn btn-g" href="/#guide">从哪支开始看</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 280" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8ab5"/><stop offset="1" stop-color="#e11d63"/></linearGradient>
+            <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#fde68a" stop-opacity=".9"/><stop offset="1" stop-color="#f472a6" stop-opacity=".5"/></linearGradient>
+          </defs>
+          <circle cx="300" cy="66" r="46" fill="url(#g2)" opacity=".55"/>
+          <circle cx="92" cy="206" r="62" fill="url(#g1)" opacity=".18"/>
+          <g class="pulse">
+            <path d="M196 44c22 6 34 26 34 50 0 22-9 38-24 50l-13-12c12-10 19-24 19-39 0-18-8-31-24-37z" fill="url(#g1)"/>
+            <circle cx="255" cy="58" r="11" fill="#fde68a"/>
+            <path d="M120 232c52 18 128 18 182 0" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none" opacity=".35"/>
+          </g>
+          <g opacity=".7" stroke="#ffe4ef" stroke-width="2" fill="none">
+            <path d="M60 96q26-22 52 0t52 0"/>
+            <path d="M60 116q26-22 52 0t52 0" opacity=".6"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <!-- 左频道栏 -->
+    <aside class="side side-l" aria-label="频道索引">
+      <div class="side-box">
+        <h3>频道索引</h3>
+        <nav class="chan" id="chanNav">
+          <a href="/#overview">领域概览</a>
+          <a href="/#picks">精选推荐 <em>9</em></a>
+          <a href="/#updates">最新更新 <em>10</em></a>
+          <a href="/#cats">分类入口 <em>8</em></a>
+          <a href="/#deep">深度解析</a>
+          <a href="/#guide">观看路径 <em>5</em></a>
+          <a href="/#faq">问答 <em>6</em></a>
+          <a href="/#cmts">评论 <em>16</em></a>
+          <a href="/#news">资讯 <em>6</em></a>
+          <a href="/#reco">相关推荐</a>
+          <a href="/#submit">投稿交流</a>
+        </nav>
+      </div>
+      <div class="side-box">
+        <h3>舞种速查</h3>
+        <nav class="chan">
+          <a href="/#cats">爵士 Jazz</a>
+          <a href="/#cats">韩舞 K-Pop</a>
+          <a href="/#cats">电臀 Twerk</a>
+          <a href="/#cats">钢管 Pole</a>
+          <a href="/#cats">椅子舞 Chair</a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- 中主内容 -->
+    <div class="main-col">
+
+      <!-- 1 领域概览 -->
+      <section class="block" id="overview">
+        <span class="sec-anchor"></span>
+        <div class="block-h"><h2>热舞领域的构成与当下看点</h2><span class="hint">舞种、拍摄形态、评价口径</span></div>
+        <div class="overview">
+          <p>热舞作品按舞种分，主流是<strong>爵士（Jazz / Street Jazz）</strong>、<strong>韩舞（K-Pop 翻跳）</strong>、<strong>电臀（Twerk）</strong>、<strong>钢管舞（Pole）</strong>和<strong>椅子舞（Chair Dance）</strong>五类。爵士偏编舞完整度，韩舞看还原度与团位，电臀和椅子舞的看点集中在节奏切分与身体控制，钢管舞则卡在力量与旋转技巧上，受众区分明显。</p>
+          <p>拍摄形态比舞种更影响观感。练习室版多为固定机位全身景，能看清脚下走位；舞台直拍用长焦跟拍，脸清楚但脚下被裁；MV 舞蹈段落剪辑碎，适合看整体效果不适合学动作；竖屏自拍和镜面拍摄方便传播，但镜面会左右反，跟着学容易做错方向。2026 年下半年，练习室版和“一镜到底”完整版的收藏量明显高于剪辑版。</p>
+          <p>评价一支作品，圈内常用的三个口径是：动作完成度（到位、卡点、延伸）、编舞信息量（是否有重复段落、走位是否只有前后两点）、以及声画同步（原曲卡点是否被二次剪辑打乱）。单看播放量容易被封面和标题带偏，312 支收录作品里，播放前 20 的条目有 7 支在动作完成度上被评论区指出“只做了上半身”。</p>
+          <p>值得先看的，是 2026 年 10 月至 11 月初集中上线的几组：<strong>《凌晨练习室》爵士系列</strong>、<strong>林知夏的韩舞一镜到底</strong>、<strong>钢管舞者苏黎的《Slow Burn》完整版</strong>。三组分别代表编舞型、还原型、技巧型三个方向，看完基本能建立自己的偏好。</p>
+          <div class="ov-tags"><span>练习室版</span><span>舞台直拍</span><span>一镜到底</span><span>镜面翻跳</span><span>卡点切分</span><span>走位设计</span><span>身体控制</span><span>声画同步</span></div>
+        </div>
+      </section>
+
+      <!-- 2 精选推荐 -->
+      <section class="block" id="picks">
+        <span class="sec-anchor"></span>
+        <div class="block-h"><h2>本周精选热舞作品</h2><span class="hint">9 支，按舞种与拍摄形态区分</span></div>
+        <p class="block-sub">每支标注类型、看点与热度，热度为本周期站内收藏加权值，非播放量。</p>
+        <div class="cards" id="pickCards">
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/jazzstudio01/400/300" width="400" height="300" loading="lazy" alt="凌晨练习室爵士版镜面墙前的全身机位画面"><span class="tagline">爵士 · 练习室</span></div>
+            <div class="body">
+              <h3>《凌晨练习室》爵士版 第 3 支</h3>
+              <p class="desc">固定机位全身景，脚下走位完整可见。副歌段有一次反向转身，镜面版同步放出，适合跟着学分拍。</p>
+              <div class="tags"><i>固定机位</i><i>反向转身</i><i>可跟学</i></div>
+              <div class="foot"><span>更新 11-07</span><b>热度 96</b></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/kpoplin01/400/300" width="400" height="300" loading="lazy" alt="林知夏韩舞翻跳一镜到底的舞台侧机位画面"><span class="tagline">韩舞 · 一镜到底</span></div>
+            <div class="body">
+              <h3>林知夏《Boom》韩舞翻跳一镜到底</h3>
+              <p class="desc">4 分 12 秒无剪辑，团位从五人变三人再回五人，第二段副歌的肩部发力与原版有差异，评论区有逐帧比对。</p>
+              <div class="tags"><i>一镜到底</i><i>团位变化</i><i>逐帧比对</i></div>
+              <div class="foot"><span>更新 11-05</span><b>热度 94</b></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/polesu01/400/300" width="400" height="300" loading="lazy" alt="钢管舞者苏黎在钢管上完成倒挂旋转的舞台画面"><span class="tagline">钢管 · 完整版</span></div>
+            <div class="body">
+              <h3>苏黎《Slow Burn》钢管完整版</h3>
+              <p class="desc">3 分 40 秒含两次换手和一次空中劈叉，落地后接地面滚翻。练习室未剪版比舞台版多出 22 秒准备动作。</p>
+              <div class="tags"><i>空中技巧</i><i>未剪版</i><i>力量控制</i></div>
+              <div class="foot"><span>更新 11-04</span><b>热度 91</b></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/twerkmi01/400/300" width="400" height="300" loading="lazy" alt="电臀舞者米娜低机位拍摄的节奏切分画面"><span class="tagline">电臀 · 低机位</span></div>
+            <div class="body">
+              <h3>米娜 Twerk 节奏切分版《Low》</h3>
+              <p class="desc">低机位仰拍，鼓点每 8 拍切一次动作。第二段有双人镜像对位，节奏错位处被评论指出抢了半拍。</p>
+              <div class="tags"><i>低机位</i><i>8 拍切换</i><i>镜像对位</i></div>
+              <div class="foot"><span>更新 11-03</span><b>热度 88</b></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/chairyu01/400/300" width="400" height="300" loading="lazy" alt="椅子舞者余笙在单椅上完成身体延伸的暗调画面"><span class="tagline">椅子舞 · 暗调</span></div>
+            <div class="body">
+              <h3>余笙椅子舞《Velvet》单人版</h3>
+              <p class="desc">一把折叠椅撑完整支，重点在背部和手臂延伸。灯光压暗后腿部动作看得不清，学动作建议看同曲的亮调版。</p>
+              <div class="tags"><i>单椅</i><i>身体延伸</i><i>暗调打光</i></div>
+              <div class="foot"><span>更新 11-02</span><b>热度 85</b></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/jazzdouble01/400/300" width="400" height="300" loading="lazy" alt="双人爵士编舞同步镜像走位的排练室画面"><span class="tagline">爵士 · 双人</span></div>
+            <div class="body">
+              <h3>双人爵士《Neon》同步版</h3>
+              <p class="desc">两人身高差 12 厘米，编舞靠手位高低差找齐。中间的托举动作有三次尝试，成片取的是第二次。</p>
+              <div class="tags"><i>双人同步</i><i>手位找齐</i><i>托举</i></div>
+              <div class="foot"><span>更新 11-01</span><b>热度 82</b></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/kpopmirror01/400/300" width="400" height="300" loading="lazy" alt="镜面翻跳视频中舞者与镜中倒影并排的画面"><span class="tagline">韩舞 · 镜面</span></div>
+            <div class="body">
+              <h3>《Sugar》镜面翻跳 四人版</h3>
+              <p class="desc">镜面版方便跟学，注意左右反向。四人里第二位的肩线明显低于其他人，合拍处能看出差半格。</p>
+              <div class="tags"><i>镜面反向</i><i>四人合拍</i><i>跟学向</i></div>
+              <div class="foot"><span>更新 10-30</span><b>热度 79</b></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/polelv01/400/300" width="400" height="300" loading="lazy" alt="钢管舞旋转接地面动作的连续抓拍画面"><span class="tagline">钢管 · 旋转连招</span></div>
+            <div class="body">
+              <h3>《Orbit》钢管旋转连招拆解</h3>
+              <p class="desc">把 18 秒的连招拆成 6 个节点慢放，标注每个节点的握杆位置。适合已经能上杆的人补细节。</p>
+              <div class="tags"><i>慢放拆解</i><i>握杆位置</i><i>进阶向</i></div>
+              <div class="foot"><span>更新 10-28</span><b>热度 76</b></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/twerkduo01/400/300" width="400" height="300" loading="lazy" alt="双人电臀对位编舞的侧向机位画面"><span class="tagline">电臀 · 双人对位</span></div>
+            <div class="body">
+              <h3>双人 Twerk《Pulse》对位版</h3>
+              <p class="desc">两人前后错位半拍形成呼应，第三段改成完全同步。侧机位能看清髋部发力方向，正面机位会看不准。</p>
+              <div class="tags"><i>错位半拍</i><i>侧机位</i><i>髋部发力</i></div>
+              <div class="foot"><span>更新 10-26</span><b>热度 73</b></div>
+            </div>
+          </article>
+        </div>
+        <p class="block-sub" id="noRes" style="display:none;color:var(--brand-d)">没有匹配的作品，换个舞种名或舞者名试试，例如“爵士”“林知夏”。</p>
+      </section>
+
+      <!-- 3 最新更新 -->
+      <section class="block" id="updates">
+        <span class="sec-anchor"></span>
+        <div class="block-h"><h2>近一周更新与热播动态</h2><span class="hint">10 条，含上线时间与版本差异</span></div>
+        <ul class="newslist">
+          <li><div class="n">11-07</div><div class="c"><h4>《凌晨练习室》爵士版第 3 支上线</h4><p>时长 2 分 51 秒，比第 2 支短 18 秒，副歌少一次重复；镜面版同时放出，两个版本差一个反向转身。</p><div class="who">发布方：练习室账号「凌晨四点」</div></div></li>
+          <li><div class="n">11-07</div><div class="c"><h4>林知夏《Boom》一镜到底补发练习室未剪版</h4><p>未剪版 5 分 06 秒，比舞台版多出团位调整的 54 秒，第二段副歌前有一次完整重来。</p><div class="who">发布方：林知夏个人频道</div></div></li>
+          <li><div class="n">11-06</div><div class="c"><h4>韩舞频道收录 14 支《Sugar》翻跳</h4><p>其中 9 支为镜面版，5 支为正面版；四人以上合拍的有 6 支，三人以下 8 支。</p><div class="who">来源：韩舞分类收录</div></div></li>
+          <li><div class="n">11-06</div><div class="c"><h4>钢管舞《Slow Burn》舞台版与练习室版同日更新</h4><p>舞台版 3 分 40 秒，练习室版 4 分 02 秒；差在落地后的地面滚翻，舞台版剪掉了准备动作。</p><div class="who">发布方：苏黎</div></div></li>
+          <li><div class="n">11-05</div><div class="c"><h4>《Neon》双人爵士托举段落重拍</h4><p>原片托举失败两次，重拍版改用低位托举，稳定度提升但视觉高度下降。</p><div class="who">发布方：双人组合 N&K</div></div></li>
+          <li><div class="n">11-04</div><div class="c"><h4>米娜 Twerk《Low》被指出抢拍</h4><p>第二段 1 分 12 秒处，镜像对位的右侧舞者比鼓点提前约半拍，评论区有逐帧截图。</p><div class="who">讨论来源：作品评论区</div></div></li>
+          <li><div class="n">11-03</div><div class="c"><h4>椅子舞《Velvet》上线亮调版本</h4><p>同一编舞换灯光重拍，腿部动作清晰度提升；暗调版保留作为氛围向版本。</p><div class="who">发布方：余笙</div></div></li>
+          <li><div class="n">11-02</div><div class="c"><h4>钢管旋转连招《Orbit》拆解视频放出</h4><p>18 秒连招拆成 6 个节点，每个节点标注握杆高度与手肘角度。</p><div class="who">发布方：钢管教学账号「上杆之前」</div></div></li>
+          <li><div class="n">10-30</div><div class="c"><h4>《Sugar》四人镜面版进入跟学榜前五</h4><p>收藏中有 63% 来自“跟学”标签，评论多集中在左右反向和肩线找齐。</p><div class="who">来源：站内收藏统计</div></div></li>
+          <li><div class="n">10-26</div><div class="c"><h4>双人 Twerk《Pulse》补发侧机位版本</h4><p>侧机位能看清髋部发力方向，正面机位版本保留作对比。</p><div class="who">发布方：双人组合 M&L</div></div></li>
+        </ul>
+      </section>
+
+      <!-- 4 分类入口 -->
+      <section class="block" id="cats">
+        <span class="sec-anchor"></span>
+        <div class="block-h"><h2>按舞种与拍摄形态找片</h2><span class="hint">点击可按舞种筛选上方精选</span></div>
+        <p class="block-sub">八个入口，前五个按舞种分，后三个按拍摄与用途分。</p>
+        <div class="cat-grid" id="catGrid">
+          <button class="cat" type="button" data-cat="爵士"><b>爵士 Jazz</b><span>编舞完整度高，走位设计多，适合看整体编排</span></button>
+          <button class="cat" type="button" data-cat="韩舞"><b>韩舞 K-Pop</b><span>看还原度与团位，镜面版方便跟学</span></button>
+          <button class="cat" type="button" data-cat="电臀"><b>电臀 Twerk</b><span>节奏切分为主，低机位和侧机位更清楚</span></button>
+          <button class="cat" type="button" data-cat="钢管"><b>钢管 Pole</b><span>力量与旋转技巧，拆解版适合进阶补细节</span></button>
+          <button class="cat" type="button" data-cat="椅子舞"><b>椅子舞 Chair</b><span>身体延伸与灯光配合，单人版居多</span></button>
+          <button class="cat" type="button" data-cat="练习室"><b>练习室版</b><span>固定机位全身景，脚下走位完整</span></button>
+          <button class="cat" type="button" data-cat="一镜到底"><b>一镜到底</b><span>无剪辑，能看到重来和调整过程</span></button>
+          <button class="cat" type="button" data-cat="镜面"><b>镜面翻跳</b><span>跟学向，注意左右反向</span></button>
+        </div>
+      </section>
+
+      <!-- 5 深度解析 -->
+      <section class="block" id="deep">
+        <span class="sec-anchor"></span>
+        <div class="block-h"><h2>五类热舞的差异与判断口径</h2><span class="hint">约 800 字，含对照表与来源分层</span></div>
+        <div class="deep">
+          <h3>爵士和韩舞的分野，不在难度在信息密度</h3>
+          <p>爵士和韩舞常被放在一起比，其实比错了地方。爵士的看点在于编舞本身的信息量：一支 3 分钟的爵士，如果走位只在前、中、后三点来回，副歌动作又是同一组重复四次，那它的信息密度其实很低，动作再到位也撑不住反复看。</p>
+          <p>韩舞的看点是还原度。翻跳《Boom》这类团位变化多的曲目，难点在五人变三人再回五人的过渡段，谁补位、谁走外圈、肩线怎么找齐，都是可以逐帧核对的东西。林知夏 11 月 5 日的一镜到底版之所以被讨论，是因为第二段副歌的肩部发力与原版存在差异，评论区用逐帧截图对出了三处。</p>
+          <p>拿《凌晨练习室》和《Sugar》四人镜面版对比，前者 2 分 51 秒里换了 6 次走位，后者 3 分 20 秒换了 3 次。走位次数不等于好坏，但能说明两支作品的编排取向：一支在编舞上做加法，一支在还原上做减法。</p>
+
+          <h3>钢管与电臀：技巧门槛和观看门槛不在同一层</h3>
+          <p>钢管舞的观看门槛低、上手门槛高。苏黎《Slow Burn》里的两次换手和一次空中劈叉，外行看着流畅，实际每个节点都要求握杆位置精确到手掌的哪一段。10 月 28 日放出的《Orbit》拆解把 18 秒连招分成 6 个节点，标注握杆高度和手肘角度，这类内容对已经能上杆的人有用，对没上过杆的人基本看不懂。</p>
+          <p>电臀反过来：上手门槛不高，看明白门槛不低。低机位仰拍是常见拍法，但仰拍会压缩纵向动作，髋部发力的方向反而看不准。米娜《Low》的侧机位版本比正面版清楚，原因就在这里。11 月 4 日评论区指出 1 分 12 秒处右侧舞者抢了半拍，这个判断只有在侧机位、能看到两人髋部起落先后顺序时才成立。</p>
+
+          <h3>把“可信度”拆成可核对的三项</h3>
+          <p>判断一支热舞作品值不值得花时间，与其听“完成度高”这种评语，不如核对三项来源。以 11 月初的几支作品为例：</p>
+          <table class="cmp">
+            <thead><tr><th>核对项</th><th>具体看什么</th><th>缺失时的表现</th></tr></thead>
+            <tbody>
+              <tr><td>机位是否完整</td><td>脚下走位能否全程看到，有无裁切</td><td>只剩上半身，走位靠猜</td></tr>
+              <tr><td>声画是否同源</td><td>原曲卡点有没有被二次剪辑打乱</td><td>鼓点和动作对不上，却说“卡点准”</td></tr>
+              <tr><td>版本是否标注</td><td>练习室 / 舞台 / 镜面 是否写明</td><td>镜面版未标，跟学做反方向</td></tr>
+            </tbody>
+          </table>
+          <div class="callout"><b>可核对的结构：</b>“传播快”在热舞内容里通常来自三个环节——封面选取是否截到动作高点、前 3 秒是否直接进副歌、竖屏比例是否适配信息流。三个环节缺一个，转发量会明显下降，这跟作品质量无关。</div>
+          <p>这三项里最容易缺的是版本标注。10 月 30 日上线的《Sugar》四人镜面版，如果没标“镜面”，跟着学的人会把左右做反；标注之后，同一支作品的跟学价值直接翻倍。版本信息比动作难度更影响实际使用。</p>
+
+          <h3>编舞重复段落：一个可量化的判断点</h3>
+          <p>一支作品值不值得反复看，可以数重复段落。以副歌为单位，如果一组动作在 3 分钟里完整重复 4 次以上，且每次没有加花、没有换机位、没有换人，那它更适合当背景看，不适合逐帧拆。</p>
+          <p>《凌晨练习室》第 3 支比第 2 支短 18 秒，少的正是副歌的第四次重复，换上了一次反向转身。这 18 秒的取舍，是这支比上一支更耐看的具体原因。反过来，《Neon》双人版重拍后把高位托举换成低位，稳定度上去了，但整支作品的视觉高点也随之下移，值不值得换，取决于看的人要稳定还是要高点。</p>
+          <p>评论区里对“只做上半身”的批评，本质也是重复段落问题：上半身动作重复、下半身不动，看两支就腻。312 支收录作品里，播放前 20 有 7 支被指出这一点，比例不算低。</p>
+        </div>
+      </section>
+
+      <!-- 6 观看路径 -->
+      <section class="block" id="guide">
+        <span class="sec-anchor"></span>
+        <div class="block-h"><h2>从哪支开始看：五步观看路径</h2><span class="hint">按投入时间从短到长排</span></div>
+        <div class="steps">
+          <div class="step"><h4>先用 3 分钟定偏好</h4><p>看《凌晨练习室》爵士版和《Sugar》四人镜面版各一支：前者看编舞，后者看还原。看完更想跟着动的是韩舞向，更想看整体编排的是爵士向。</p></div>
+          <div class="step"><h4>确认自己能看懂的机位</h4><p>练习室固定机位全身景信息最全，舞台直拍脸清楚但脚下被裁，竖屏自拍适合刷不适合学。先确认哪种机位能看清脚下，再决定跟不跟学。</p></div>
+          <div class="step"><h4>按重复段落筛掉不耐看的</h4><p>副歌完整重复 4 次以上且无变化的，当背景看；有反向、换人、换机位的，值得逐段拆。这一步能筛掉一大半。</p></div>
+          <div class="step"><h4>技巧类先看拆解再看完整版</h4><p>钢管和电臀建议倒过来：先看《Orbit》这类节点拆解，知道每个动作卡在哪，再回看《Slow Burn》完整版，能看出准备动作和落地的差别。</p></div>
+          <div class="step"><h4>同类条目横向比三支</h4><p>同一支曲子找三个不同舞者的版本，比团位、比肩线、比声画同步。比完三支，对这支曲子的难点在哪基本有数，再决定收藏哪支。</p></div>
+        </div>
+      </section>
+
+      <!-- 7 FAQ -->
+      <section class="block" id="faq">
+        <span class="sec-anchor"></span>
+        <div class="block-h"><h2>热舞观看与跟学常见问题</h2><span class="hint">6 问，围绕具体类型与判断</span></div>
+        <div class="faq">
+          <details><summary>镜面翻跳和正面版有什么区别，跟学该选哪个？</summary><div class="a">镜面版是舞者面对镜子拍，画面里人的左右和观众相反。跟学时选镜面版，抬手方向能和画面同步；但要注意镜面版里舞者的右手，对应的是你的左手。正面版适合看整体效果，不适合逐帧跟。</div></details>
+          <details><summary>韩舞翻跳里说的“团位”具体指什么？</summary><div class="a">团位指多人在舞台上的位置关系，包括前后错位、左右间距和中心位轮换。像《Boom》的翻跳，五人变三人再回五人的过渡段，谁补位、谁走外圈，都算团位。团位变化多的版本，还原难度明显更高。</div></details>
+          <details><summary>钢管舞的旋转连招，外行能看懂吗？</summary><div class="a">能看流畅度，看不懂难度。旋转连招的关键在握杆位置和手肘角度，比如《Orbit》拆解里 18 秒分成 6 个节点，每个节点的握杆高度不同。没上过杆的人看完整版只能判断顺不顺，判断不了难不难。</div></details>
+          <details><summary>为什么有的热舞视频鼓点和动作对不上？</summary><div class="a">常见原因是二次剪辑。原曲卡点被剪碎重组后，鼓点和动作会错位；也有舞者本身抢拍或拖拍的情况，像《Low》1 分 12 秒处右侧舞者提前约半拍。判断方法是找一段没有剪辑的一镜到底版本对照。</div></details>
+          <details><summary>椅子舞为什么大多用暗调打光？</summary><div class="a">暗调能突出身体轮廓和手臂延伸，但会牺牲腿部动作的清晰度。《Velvet》暗调版适合看氛围，亮调版适合学动作。想跟学就选亮调，想感受编舞气质就看暗调。</div></details>
+          <details><summary>同一支曲子多个版本，怎么判断哪支值得收藏？</summary><div class="a">按三项核对：机位是否全程看到脚下、声画是否同源未剪碎、版本是否标注清楚。三项都满足的版本，跟学价值最高；只满足一两项的，多半适合看整体效果。动作难度放在最后比。</div></details>
+        </div>
+      </section>
+
+      <!-- 8 评论 -->
+      <section class="block" id="cmts">
+        <span class="sec-anchor"></span>
+        <div class="block-h"><h2>评论区实况</h2><span class="hint">16 条，含中性评价与吐槽</span></div>
+        <div class="cmts">
+          <div class="cmt"><div class="who"><span class="av">柠</span><span class="nm">柠檬不加冰</span><span class="tm">11-07</span></div><p>《凌晨练习室》第 3 支那个反向转身，跟着学了三遍还是转错方向，镜面版救了我。</p></div>
+          <div class="cmt"><div class="who"><span class="av">阿</span><span class="nm">阿柚</span><span class="tm">11-07</span></div><p>林知夏《Boom》一镜到底第二段副歌肩部确实跟原版不一样，逐帧对过，差三处。</p></div>
+          <div class="cmt"><div class="who"><span class="av">半</span><span class="nm">半糖去冰</span><span class="tm">11-06</span></div><p>钢管那个空中劈叉看着简单，自己上杆试了一下，握杆位置差一点就滑了。</p></div>
+          <div class="cmt"><div class="who"><span class="av">小</span><span class="nm">小满</span><span class="tm">11-06</span></div><p>《Sugar》四人版第二位肩线明显低，合拍的时候能看出来差半格，不过整体还行。</p></div>
+          <div class="cmt"><div class="who"><span class="av">夜</span><span class="nm">夜航船</span><span class="tm">11-05</span></div><p>电臀低机位仰拍真的看不准髋部方向，换成侧机位一下清楚了，建议都补侧机位。</p></div>
+          <div class="cmt"><div class="who"><span class="av">三</span><span class="nm">三号选手</span><span class="tm">11-05</span></div><p>今天加班到十点，回来刷了两支就睡了，明天再看完整版。</p></div>
+          <div class="cmt"><div class="who"><span class="av">青</span><span class="nm">青柠汽水</span><span class="tm">11-04</span></div><p>米娜《Low》1 分 12 秒右侧抢拍，评论区截图都摆出来了，这个没法洗。</p></div>
+          <div class="cmt"><div class="who"><span class="av">老</span><span class="nm">老陈</span><span class="tm">11-04</span></div><p>椅子舞暗调版好看是好看，学动作真不行，腿在哪都看不清，亮调版好多了。</p></div>
+          <div class="cmt"><div class="who"><span class="av">H</span><span class="nm">Hana</span><span class="tm">11-03</span></div><p>双人爵士《Neon》重拍后托举稳了，但没原来那个高度，视觉上差点意思。</p></div>
+          <div class="cmt"><div class="who"><span class="av">路</span><span class="nm">路人甲</span><span class="tm">11-03</span></div><p>不太懂舞，就是觉得《Slow Burn》那支音乐和动作很搭，看得很舒服。</p></div>
+          <div class="cmt"><div class="who"><span class="av">一</span><span class="nm">一只猫</span><span class="tm">11-02</span></div><p>练习室固定机位才是正经拍法，舞台直拍脸是清楚，脚下全裁了怎么学。</p></div>
+          <div class="cmt"><div class="who"><span class="av">周</span><span class="nm">周末不加班</span><span class="tm">11-02</span></div><p>《Orbit》拆解看完才知道 18 秒里有 6 个节点，以前看完整版完全没注意。</p></div>
+          <div class="cmt"><div class="who"><span class="av">苏</span><span class="nm">苏打水</span><span class="tm">11-01</span></div><p>有些翻跳副歌重复四遍一模一样，看两遍就腻了，能不能多加点变化。</p></div>
+          <div class="cmt"><div class="who"><span class="av">无</span><span class="nm">无糖可乐</span><span class="tm">10-31</span></div><p>镜面版没标镜面的真的坑，跟着做反了方向，自己对着镜子才发现。</p></div>
+          <div class="cmt"><div class="who"><span class="av">木</span><span class="nm">木木</span><span class="tm">10-30</span></div><p>《Pulse》双人错位半拍那段最好看，同步那段反而普通了，个人感觉。</p></div>
+          <div class="cmt"><div class="who"><span class="av">七</span><span class="nm">七分饱</span><span class="tm">10-29</span></div><p>刷到哪算哪，没特意挑，反正晚上躺着看挺放松的。</p></div>
+        </div>
+      </section>
+
+      <!-- 9 资讯 -->
+      <section class="block" id="news">
+        <span class="sec-anchor"></span>
+        <div class="block-h"><h2>热舞圈近期资讯</h2><span class="hint">6 条，含时间、当事方与后续动作</span></div>
+        <div class="artlist">
+          <article class="art">
+            <img src="https://picsum.photos/seed/newsstudio01/600/400" width="600" height="400" loading="lazy" alt="练习室账号凌晨四点发布新作品时的拍摄现场">
+            <div class="b"><div class="dt">2026-11-07</div><h4>「凌晨四点」练习室系列确认周更</h4><p>账号在 11 月 7 日的更新说明里写明，爵士版将保持每周一支，下一支计划 11 月 14 日上线，曲目尚未公布。</p></div>
+          </article>
+          <article class="art">
+            <img src="https://picsum.photos/seed/newskpop01/600/400" width="600" height="400" loading="lazy" alt="韩舞翻跳合拍排练中的团位调整画面">
+            <div class="b"><div class="dt">2026-11-06</div><h4>韩舞频道单周收录 14 支《Sugar》翻跳</h4><p>其中 6 支标注了镜面，8 支为正面版；收录方称下月起将在条目页强制标注机位类型，减少跟学做反方向的情况。</p></div>
+          </article>
+          <article class="art">
+            <img src="https://picsum.photos/seed/newspole01/600/400" width="600" height="400" loading="lazy" alt="钢管舞练习室中舞者调整握杆高度的画面">
+            <div class="b"><div class="dt">2026-11-05</div><h4>苏黎《Slow Burn》两版同日上线</h4><p>舞台版 3 分 40 秒、练习室版 4 分 02 秒，差值来自落地后的地面滚翻准备动作。苏黎在说明里表示，练习室版专为拆解留出完整过程。</p></div>
+          </article>
+          <article class="art">
+            <img src="https://picsum.photos/seed/newstwerk01/600/400" width="600" height="400" loading="lazy" alt="电臀舞侧机位拍摄时舞者与镜头位置关系">
+            <div class="b"><div class="dt">2026-11-04</div><h4>《Low》抢拍争议后补发侧机位</h4><p>争议集中在 1 分 12 秒的镜像对位段。发布方 11 月 4 日晚补发侧机位版本，并在说明中承认右侧舞者“提前了约半拍”，未重拍。</p></div>
+          </article>
+          <article class="art">
+            <img src="https://picsum.photos/seed/newschair01/600/400" width="600" height="400" loading="lazy" alt="椅子舞亮调版本重拍时的灯光布置">
+            <div class="b"><div class="dt">2026-11-03</div><h4>《Velvet》亮调版上线，暗调版保留</h4><p>余笙团队表示，亮调版为重拍版本，灯光色温从 3200K 提到 5000K，腿部动作可见度提升；暗调版不下架，作为氛围向版本并存。</p></div>
+          </article>
+          <article class="art">
+            <img src="https://picsum.photos/seed/newsorbit01/600/400" width="600" height="400" loading="lazy" alt="钢管连招拆解视频中的节点标注画面">
+            <div class="b"><div class="dt">2026-10-28</div><h4>钢管连招拆解《Orbit》上线 6 节点版本</h4><p>「上杆之前」把 18 秒连招拆成 6 个节点，每节点标注握杆高度与手肘角度，并称下一步会补一套地面动作的对照拆解。</p></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 10 相关推荐 -->
+      <section class="block" id="reco">
+        <span class="sec-anchor"></span>
+        <div class="block-h"><h2>相关方向与条目索引</h2><span class="hint">8 个具体方向</span></div>
+        <div class="reco">
+          <a href="/#picks">韩舞团位变化对照</a>
+          <a href="/#picks">爵士反向转身教学</a>
+          <a href="/#picks">钢管握杆高度拆解</a>
+          <a href="/#picks">电臀侧机位合集</a>
+          <a href="/#picks">椅子舞亮调版本</a>
+          <a href="/#updates">一镜到底未剪版</a>
+          <a href="/#guide">镜面跟学注意事项</a>
+          <a href="/#news">单周翻跳收录统计</a>
+        </div>
+      </section>
+
+      <!-- 11 补充：榜单 + 时间线 -->
+      <section class="block" id="extra">
+        <span class="sec-anchor"></span>
+        <div class="block-h"><h2>本周热度榜与上线时间线</h2><span class="hint">榜单按收藏加权，时间线取近两周</span></div>
+        <div class="two">
+          <div class="panel">
+            <h3>本周收藏加权榜</h3>
+            <ol class="bill">
+              <li><span class="idx">1</span><span class="t">《凌晨练习室》爵士版 第 3 支</span><span class="v">96</span></li>
+              <li><span class="idx">2</span><span class="t">林知夏《Boom》一镜到底</span><span class="v">94</span></li>
+              <li><span class="idx">3</span><span class="t">苏黎《Slow Burn》钢管完整版</span><span class="v">91</span></li>
+              <li><span class="idx">4</span><span class="t">米娜 Twerk《Low》节奏切分版</span><span class="v">88</span></li>
+              <li><span class="idx">5</span><span class="t">余笙椅子舞《Velvet》单人版</span><span class="v">85</span></li>
+              <li><span class="idx">6</span><span class="t">双人爵士《Neon》同步版</span><span class="v">82</span></li>
+            </ol>
+          </div>
+          <div class="panel">
+            <h3>近两周上线时间线</h3>
+            <ul class="tl">
+              <li><time>2026-10-26</time><b>《Pulse》侧机位版</b>双人组合 M&L 补发</li>
+              <li><time>2026-10-28</time><b>《Orbit》拆解上线</b>6 节点握杆标注</li>
+              <li><time>2026-10-30</time><b>《Sugar》四人镜面版</b>跟学榜前五</li>
+              <li><time>2026-11-02</time><b>《Velvet》暗调版</b>单人椅子舞</li>
+              <li><time>2026-11-03</time><b>《Velvet》亮调版</b>同编舞重拍</li>
+              <li><time>2026-11-05</time><b>《Slow Burn》双版</b>舞台与练习室同日</li>
+              <li><time>2026-11-07</time><b>《Boom》未剪版</b>多出 54 秒调整段</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12 投稿交流 -->
+      <section class="block" id="submit">
+        <span class="sec-anchor"></span>
+        <div class="block-h"><h2>投稿与作品交流</h2><span class="hint">练习室、翻跳、编舞均可</span></div>
+        <div class="submit">
+          <div>
+            <h3>把你拍的练习室或翻跳放进来</h3>
+            <p>接受爵士、韩舞、电臀、钢管、椅子舞五类作品，优先收固定机位全身景和一镜到底版本。投稿时请写明舞种、曲目、机位类型和是否为镜面，未标版本的条目会先退回补充。编舞原创作品可申请单独建档。</p>
+          </div>
+          <a class="btn btn-p" href="/#submit">提交作品信息</a>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 右辅助栏 -->
+    <aside class="side side-r" aria-label="辅助信息">
+      <div class="side-box">
+        <h3>今日更新</h3>
+        <ul class="upd">
+          <li><b>《凌晨练习室》第 3 支</b>爵士 · 镜面版同放<time>11-07 21:40</time></li>
+          <li><b>《Boom》未剪版</b>多出 54 秒<time>11-07 18:05</time></li>
+          <li><b>《Sugar》翻跳收录</b>14 支入韩舞频道<time>11-06 15:20</time></li>
+          <li><b>《Slow Burn》练习室版</b>4 分 02 秒<time>11-05 20:10</time></li>
+        </ul>
+      </div>
+      <div class="side-box">
+        <h3>跟学榜前五</h3>
+        <ol class="bill">
+          <li><span class="idx">1</span><span class="t">《Sugar》镜面版</span><span class="v">跟学 63%</span></li>
+          <li><span class="idx">2</span><span class="t">《凌晨练习室》第 3 支</span><span class="v">跟学 58%</span></li>
+          <li><span class="idx">3</span><span class="t">《Boom》一镜到底</span><span class="v">跟学 51%</span></li>
+          <li><span class="idx">4</span><span class="t">《Velvet》亮调版</span><span class="v">跟学 47%</span></li>
+          <li><span class="idx">5</span><span class="t">《Neon》双人版</span><span class="v">跟学 39%</span></li>
+        </ol>
+      </div>
+      <div class="side-box">
+        <h3>多看一支</h3>
+        <ul class="upd">
+          <li><b>《Orbit》拆解</b>18 秒 6 节点，进阶向<time>钢管 · 10-28</time></li>
+          <li><b>《Pulse》侧机位</b>错位半拍看清髋部发力<time>电臀 · 10-26</time></li>
+          <li><b>《Slow Burn》未剪版</b>多 22 秒准备动作<time>钢管 · 11-05</time></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-top">
+      <div>
+        <div class="fl">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#e11d63"/><path d="M24 16c6 2 9 7 9 13 0 5-2 9-6 12l-4-3c3-2 5-5 5-9 0-5-2-8-6-10z" fill="#fff"/><circle cx="41" cy="22" r="4" fill="#fde68a"/></svg>
+          性感美女热舞
+        </div>
+        <p class="pos">内容覆盖 2026 年 9 月至 11 月上线作品，以练习室版、舞台直拍、一镜到底与镜面翻跳四类形态为主，兼顾钢管与电臀的拆解内容。更新节奏为工作日每日 2—4 条，周末集中补发未剪版本。</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h4>按舞种</h4>
+          <a href="/#cats">爵士 Jazz</a>
+          <a href="/#cats">韩舞 K-Pop</a>
+          <a href="/#cats">电臀 Twerk</a>
+          <a href="/#cats">钢管 Pole</a>
+          <a href="/#cats">椅子舞 Chair</a>
+        </div>
+        <div>
+          <h4>按形态</h4>
+          <a href="/#cats">练习室版</a>
+          <a href="/#cats">一镜到底</a>
+          <a href="/#cats">镜面翻跳</a>
+          <a href="/#updates">未剪版本</a>
+          <a href="/#extra">上线时间线</a>
+        </div>
+        <div>
+          <h4>参与</h4>
+          <a href="/#submit">作品投稿</a>
+          <a href="/#submit">编舞建档</a>
+          <a href="/#cmts">评论区交流</a>
+          <a href="/#faq">跟学问答</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-btm">
+      <span>示例条目与热度数值为演示数据，舞者名称与作品名均为虚构，如有雷同纯属巧合。</span>
+      <span>页面更新：2026-11-08 · 对应正文《凌晨练习室》第 3 支与《Boom》未剪版两条更新项</span>
+    </div>
+  </div>
+</footer>
+
+<button class="top" id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'),
+      nav=document.getElementById('mainNav'),
+      mask=document.getElementById('mask'),
+      toTop=document.getElementById('toTop'),
+      q=document.getElementById('q'),
+      qbtn=document.getElementById('qbtn'),
+      cards=Array.prototype.slice.call(document.querySelectorAll('#pickCards .card')),
+      noRes=document.getElementById('noRes'),
+      chanLinks=Array.prototype.slice.call(document.querySelectorAll('#chanNav a'));
+
+  function closeNav(){
+    nav.classList.remove('open');
+    mask.classList.remove('show');
+    burger.setAttribute('aria-expanded','false');
+  }
+  function openNav(){
+    nav.classList.add('open');
+    mask.classList.add('show');
+    burger.setAttribute('aria-expanded','true');
+  }
+  burger.addEventListener('click',function(){
+    if(nav.classList.contains('open')){closeNav();}else{openNav();}
+  });
+  mask.addEventListener('click',closeNav);
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){closeNav();}
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A' && window.innerWidth<=1024){closeNav();}
+  });
+
+  // 搜索筛选
+  function doSearch(){
+    var kw=(q.value||'').trim().toLowerCase();
+    var shown=0;
+    cards.forEach(function(c){
+      var txt=c.textContent.toLowerCase();
+      if(!kw || txt.indexOf(kw)>-1){c.classList.remove('hide');shown++;}else{c.classList.add('hide');}
+    });
+    noRes.style.display=shown===0?'block':'none';
+  }
+  qbtn.addEventListener('click',doSearch);
+  q.addEventListener('keydown',function(e){if(e.key==='Enter'){doSearch();}});
+  q.addEventListener('input',function(){if(!q.value.trim()){doSearch();}});
+
+  // 分类按钮筛选
+  document.getElementById('catGrid').addEventListener('click',function(e){
+    var btn=e.target.closest('.cat');
+    if(!btn)return;
+    var on=btn.classList.contains('on');
+    Array.prototype.forEach.call(this.querySelectorAll('.cat'),function(b){b.classList.remove('on');});
+    var kw=btn.getAttribute('data-cat');
+    var shown=0;
+    if(on){
+      cards.forEach(function(c){c.classList.remove('hide');});
+      noRes.style.display='none';
+      return;
+    }
+    btn.classList.add('on');
+    cards.forEach(function(c){
+      if(c.textContent.indexOf(kw)>-1){c.classList.remove('hide');shown++;}else{c.classList.add('hide');}
+    });
+    noRes.style.display=shown===0?'block':'none';
+  });
+
+  // 回顶
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>window.innerHeight*0.8){toTop.classList.add('show');}else{toTop.classList.remove('show');}
+    // 频道高亮
+    var y=window.scrollY+140, cur=null;
+    chanLinks.forEach(function(a){
+      var id=a.getAttribute('href').split('#')[1];
+      var el=document.getElementById(id);
+      if(el && el.offsetTop<=y){cur=a;}
+    });
+    chanLinks.forEach(function(a){a.classList.remove('active');});
+    if(cur){cur.classList.add('active');}
+  },{passive:true});
+  toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"性感美女热舞",
+  "description":"聚合爵士、韩舞、电臀、钢管舞、椅子舞等类型的热舞视频与舞者作品，含作品看点、舞种解析、跟学路径与评论区实况。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"镜面翻跳和正面版有什么区别，跟学该选哪个？","acceptedAnswer":{"@type":"Answer","text":"镜面版是舞者面对镜子拍，画面里人的左右和观众相反。跟学时选镜面版，抬手方向能和画面同步；但要注意镜面版里舞者的右手，对应的是你的左手。正面版适合看整体效果，不适合逐帧跟。"}},
+    {"@type":"Question","name":"韩舞翻跳里说的“团位”具体指什么？","acceptedAnswer":{"@type":"Answer","text":"团位指多人在舞台上的位置关系，包括前后错位、左右间距和中心位轮换。像《Boom》的翻跳，五人变三人再回五人的过渡段，谁补位、谁走外圈，都算团位。团位变化多的版本，还原难度明显更高。"}},
+    {"@type":"Question","name":"钢管舞的旋转连招，外行能看懂吗？","acceptedAnswer":{"@type":"Answer","text":"能看流畅度，看不懂难度。旋转连招的关键在握杆位置和手肘角度，比如《Orbit》拆解里 18 秒分成 6 个节点，每个节点的握杆高度不同。没上过杆的人看完整版只能判断顺不顺，判断不了难不难。"}},
+    {"@type":"Question","name":"为什么有的热舞视频鼓点和动作对不上？","acceptedAnswer":{"@type":"Answer","text":"常见原因是二次剪辑。原曲卡点被剪碎重组后，鼓点和动作会错位；也有舞者本身抢拍或拖拍的情况，像《Low》1 分 12 秒处右侧舞者提前约半拍。判断方法是找一段没有剪辑的一镜到底版本对照。"}},
+    {"@type":"Question","name":"椅子舞为什么大多用暗调打光？","acceptedAnswer":{"@type":"Answer","text":"暗调能突出身体轮廓和手臂延伸，但会牺牲腿部动作的清晰度。《Velvet》暗调版适合看氛围，亮调版适合学动作。想跟学就选亮调，想感受编舞气质就看暗调。"}},
+    {"@type":"Question","name":"同一支曲子多个版本，怎么判断哪支值得收藏？","acceptedAnswer":{"@type":"Answer","text":"按三项核对：机位是否全程看到脚下、声画是否同源未剪碎、版本是否标注清楚。三项都满足的版本，跟学价值最高；只满足一两项的，多半适合看整体效果。动作难度放在最后比。"}}
+  ]
+}
+</script>
+</body>
+  </html>
